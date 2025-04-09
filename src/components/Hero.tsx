@@ -1,18 +1,14 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Hero = () => {
-  return (
-    <div className="relative w-full overflow-hidden mb-12">
+  return <div className="relative w-full overflow-hidden mb-12">
       <div className="absolute inset-0 bg-gradient-to-r from-youth-purple/90 to-youth-blue/70 mix-blend-multiply"></div>
-      <div 
-        className="relative bg-cover bg-center h-[70vh] md:h-[80vh]" 
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80')" }}
-      >
-        <div className="container mx-auto px-4 h-full flex flex-col justify-center">
+      <div className="relative bg-cover bg-center h-[70vh] md:h-[80vh]" style={{
+      backgroundImage: "url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80')"
+    }}>
+        <div className="container mx-auto px-4 h-full flex flex-col justify-center bg-red-600">
           <div className="max-w-2xl text-white">
             <span className="inline-block px-3 py-1 bg-youth-orange/90 text-white text-sm font-medium rounded-full mb-4">
               Featured Story
@@ -36,8 +32,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
