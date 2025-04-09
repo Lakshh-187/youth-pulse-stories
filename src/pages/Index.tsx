@@ -1,12 +1,52 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import CategorySection from '@/components/CategorySection';
+import Newsletter from '@/components/Newsletter';
+import Footer from '@/components/Footer';
+import { storiesData } from '@/data/storiesData';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      
+      <main className="flex-grow">
+        <Hero />
+        
+        <CategorySection 
+          title="Education" 
+          categorySlug="education"
+          stories={storiesData.education}
+        />
+        
+        <div className="bg-gray-50 py-8">
+          <CategorySection 
+            title="Technology" 
+            categorySlug="technology"
+            stories={storiesData.technology}
+          />
+        </div>
+        
+        <CategorySection 
+          title="Culture" 
+          categorySlug="culture"
+          stories={storiesData.culture}
+        />
+        
+        <div className="bg-gray-50 py-8">
+          <CategorySection 
+            title="Environment" 
+            categorySlug="environment"
+            stories={storiesData.environment}
+          />
+        </div>
+        
+        <Newsletter />
+      </main>
+      
+      <Footer />
     </div>
   );
 };
