@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Frontliner from "./pages/Frontliner";
+import TopOnePercent from "./pages/TopOnePercent";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,6 +20,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/frontliner" element={<Frontliner />} />
+          <Route path="/top-one-percent" element={<TopOnePercent />} />
           <Route path="/blogs" element={<NotFound />} /> {/* Placeholder for future blogs page */}
           <Route path="/blog/:id" element={<NotFound />} /> {/* Placeholder for future blog detail page */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

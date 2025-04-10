@@ -20,12 +20,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="font-medium hover:text-youth-purple transition-colors">Home</Link>
             <Link to="/frontliner" className="font-medium hover:text-youth-purple transition-colors">Frontliner</Link>
-            <Link to="/culture" className="font-medium hover:text-youth-purple transition-colors">
-          </Link>
-            <Link to="/technology" className="font-medium hover:text-youth-purple transition-colors">
-          </Link>
-            <Link to="/environment" className="font-medium hover:text-youth-purple transition-colors">
-          </Link>
+            <Link to="/top-one-percent" className="font-medium hover:text-youth-purple transition-colors">Top 1%</Link>
           </div>
 
           {/* Desktop Action Buttons */}
@@ -47,9 +42,7 @@ const Navbar = () => {
             <div className="flex flex-col space-y-3">
               <Link to="/" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Home</Link>
               <Link to="/frontliner" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Frontliner</Link>
-              <Link to="/culture" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Culture</Link>
-              <Link to="/technology" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Technology</Link>
-              <Link to="/environment" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Environment</Link>
+              <Link to="/top-one-percent" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Top 1%</Link>
               <div className="pt-2 flex items-center">
                 <Button variant="ghost" size="icon" className="mr-2">
                   <Search className="h-5 w-5" />
