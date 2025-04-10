@@ -1,4 +1,3 @@
-
 export const storiesData = {
   featured: {
     id: "digital-revolution",
@@ -93,6 +92,88 @@ export const storiesData = {
       },
       publishedAt: "6 days ago",
       commentsCount: 21
+    }
+  ],
+  innovations: [
+    {
+      id: "ai-ethics-youth",
+      title: "Youth-Led AI Ethics Committees Making Waves",
+      excerpt: "How young innovators are shaping ethical guidelines for artificial intelligence development.",
+      category: "Innovations",
+      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&q=80",
+      author: {
+        name: "Maya Robinson",
+        avatar: "https://randomuser.me/api/portraits/women/28.jpg"
+      },
+      publishedAt: "1 day ago",
+      commentsCount: 31
+    },
+    {
+      id: "blockchain-education",
+      title: "Blockchain Revolution in Educational Credentials",
+      excerpt: "Student-developed platforms using blockchain to verify academic achievements and skills.",
+      category: "Innovations",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
+      author: {
+        name: "Ethan Kim",
+        avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+      },
+      publishedAt: "3 days ago",
+      commentsCount: 19
+    },
+    {
+      id: "vr-classroom",
+      title: "Virtual Reality Transforming Remote Learning",
+      excerpt: "How immersive technologies are creating new possibilities for global education access.",
+      category: "Innovations",
+      image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&q=80",
+      author: {
+        name: "Sophia Chen",
+        avatar: "https://randomuser.me/api/portraits/women/39.jpg"
+      },
+      publishedAt: "4 days ago",
+      commentsCount: 22
+    }
+  ],
+  initiatives: [
+    {
+      id: "global-youth-summit",
+      title: "Global Youth Summit Launches Climate Action Network",
+      excerpt: "International coalition of young leaders creating cross-border solutions to environmental challenges.",
+      category: "Initiatives",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80",
+      author: {
+        name: "Jordan Taylor",
+        avatar: "https://randomuser.me/api/portraits/men/26.jpg"
+      },
+      publishedAt: "2 days ago",
+      commentsCount: 27
+    },
+    {
+      id: "mental-health-platform",
+      title: "Student-Built Mental Health Platform Goes Global",
+      excerpt: "How a university project evolved into a worldwide resource for youth wellness support.",
+      category: "Initiatives",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80",
+      author: {
+        name: "Zoe Patel",
+        avatar: "https://randomuser.me/api/portraits/women/42.jpg"
+      },
+      publishedAt: "5 days ago",
+      commentsCount: 16
+    },
+    {
+      id: "coding-bootcamps-underserved",
+      title: "Free Coding Bootcamps Reach Underserved Communities",
+      excerpt: "Youth-led initiative bringing tech education to areas with limited digital access.",
+      category: "Initiatives",
+      image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80",
+      author: {
+        name: "Marcus Johnson",
+        avatar: "https://randomuser.me/api/portraits/men/59.jpg"
+      },
+      publishedAt: "1 week ago",
+      commentsCount: 24
     }
   ],
   culture: [

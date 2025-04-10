@@ -31,16 +31,20 @@ const Index = () => {
         </div>
         
         <CategorySection 
-          title="Culture" 
-          categorySlug="culture"
-          stories={storiesData.culture}
+          title="Innovations" 
+          categorySlug="innovations"
+          stories={storiesData.innovations}
         />
         
-        <div className="bg-gray-50 py-8">
+        <div className="bg-gradient-to-r from-youth-purple/10 to-youth-blue/10 py-10">
+          <div className="container mx-auto px-4 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">Youth-Led Initiatives</h2>
+            <p className="text-center text-gray-600 max-w-2xl mx-auto">Discover groundbreaking programs created by young leaders making a difference around the world.</p>
+          </div>
           <CategorySection 
-            title="Environment" 
-            categorySlug="environment"
-            stories={storiesData.environment}
+            title="" 
+            categorySlug="initiatives"
+            stories={storiesData.initiatives}
           />
         </div>
         
