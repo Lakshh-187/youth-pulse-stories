@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -18,7 +19,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="font-medium hover:text-youth-purple transition-colors">Home</Link>
-            <Link to="/education" className="font-medium hover:text-youth-purple transition-colors">Frontliner</Link>
+            <Link to="/frontliner" className="font-medium hover:text-youth-purple transition-colors">Frontliner</Link>
             <Link to="/culture" className="font-medium hover:text-youth-purple transition-colors">
           </Link>
             <Link to="/technology" className="font-medium hover:text-youth-purple transition-colors">
@@ -45,7 +46,7 @@ const Navbar = () => {
         {isMenuOpen && <div className="md:hidden pt-4 pb-3 border-t mt-3">
             <div className="flex flex-col space-y-3">
               <Link to="/" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Home</Link>
-              <Link to="/education" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Education</Link>
+              <Link to="/frontliner" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Frontliner</Link>
               <Link to="/culture" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Culture</Link>
               <Link to="/technology" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Technology</Link>
               <Link to="/environment" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Environment</Link>
