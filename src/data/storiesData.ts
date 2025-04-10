@@ -15,17 +15,15 @@ export const storiesData = {
   education: [
     {
       id: "college-alternatives",
-      title: "Beyond College: Alternative Paths to Success",
+      title: "vanshu",
       excerpt: "Why more young people are choosing vocational training and entrepreneurship over traditional degrees.",
-      category: "Education",
+      category: "the don",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80",
       author: {
         name: "Jamie Chen",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg"
       },
-      publishedAt: "3 days ago",
-      commentsCount: 18
-    },
+    
     {
       id: "remote-learning",
       title: "The Future of Remote Learning Post-Pandemic",
