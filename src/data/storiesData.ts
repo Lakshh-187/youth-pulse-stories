@@ -15,7 +15,7 @@ export const storiesData = {
   education: [
     {
       id: "college-alternatives",
-      title: "vanshu",
+      title: "Vanshu",
       excerpt: "Why more young peo egrees.",
       category: "the don",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80",
