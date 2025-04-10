@@ -16,7 +16,7 @@ export const storiesData = {
     {
       id: "college-alternatives",
       title: "vanshu",
-      excerpt: "Why more young people are choosing vocational training and entrepreneurship over traditional degrees.",
+      excerpt: "Why more young peo egrees.",
       category: "the don",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80",
       author: {
