@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import CategorySection from '@/components/CategorySection';
+import BlogSection from '@/components/BlogSection';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 import { storiesData } from '@/data/storiesData';
@@ -42,6 +43,8 @@ const Index = () => {
             stories={storiesData.environment}
           />
         </div>
+        
+        <BlogSection />
         
         <Newsletter />
       </main>

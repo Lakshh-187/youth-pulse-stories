@@ -19,6 +19,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/frontliner" element={<Frontliner />} />
+          <Route path="/blogs" element={<NotFound />} /> {/* Placeholder for future blogs page */}
+          <Route path="/blog/:id" element={<NotFound />} /> {/* Placeholder for future blog detail page */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
