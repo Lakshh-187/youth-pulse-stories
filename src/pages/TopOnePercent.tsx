@@ -229,7 +229,7 @@ const TopOnePercent = () => {
                   <SelectValue placeholder="Category" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Categories</SelectItem>
+                  <SelectItem value="all_categories">All Categories</SelectItem>
                   {uniqueCategories.map(category => (
                     <SelectItem key={category} value={category}>{category}</SelectItem>
                   ))}
@@ -241,7 +241,7 @@ const TopOnePercent = () => {
                   <SelectValue placeholder="Country" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Countries</SelectItem>
+                  <SelectItem value="all_countries">All Countries</SelectItem>
                   {uniqueCountries.map(country => (
                     <SelectItem key={country} value={country}>{country}</SelectItem>
                   ))}
@@ -253,7 +253,7 @@ const TopOnePercent = () => {
                   <SelectValue placeholder="Revenue (✓)" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Revenue Ranges</SelectItem>
+                  <SelectItem value="all_revenues">All Revenue Ranges</SelectItem>
                   {uniqueRevenues.map(revenue => (
                     <SelectItem key={revenue} value={revenue}>{revenue}</SelectItem>
                   ))}
@@ -265,7 +265,7 @@ const TopOnePercent = () => {
                   <SelectValue placeholder="Cause of failure (✗)" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Failure Causes</SelectItem>
+                  <SelectItem value="all_failure_causes">All Failure Causes</SelectItem>
                   {uniqueFailureCauses.map(cause => (
                     <SelectItem key={cause} value={cause}>{cause}</SelectItem>
                   ))}
