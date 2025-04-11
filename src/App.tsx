@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Frontliner from "./pages/Frontliner";
 import TopOnePercent from "./pages/TopOnePercent";
 import NotFound from "./pages/NotFound";
+import ReferralPage from "./pages/ReferralPage";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/top-one-percent" element={<TopOnePercent />} />
           <Route path="/blogs" element={<NotFound />} /> {/* Placeholder for future blogs page */}
           <Route path="/blog/:id" element={<NotFound />} /> {/* Placeholder for future blog detail page */}
+          <Route path="/referral/:storyId" element={<ReferralPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

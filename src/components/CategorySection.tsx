@@ -48,6 +48,8 @@ const CategorySection: React.FC<CategorySectionProps> = ({ title, categorySlug, 
               author={story.author}
               publishedAt={story.publishedAt}
               commentsCount={story.commentsCount}
+              hasReadMore={true}
+              referralLink={`/referral/${story.id}`}
             />
           ))}
         </div>
