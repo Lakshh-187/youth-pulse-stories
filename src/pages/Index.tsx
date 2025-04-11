@@ -25,15 +25,15 @@ const Index = () => {
         <div className="bg-gray-50 py-8">
           <CategorySection 
             title="Technology" 
-            categorySlug="technology"
-            stories={storiesData.technology}
+            categorySlug="worldwide"
+            stories={storiesData.worldwide}
           />
         </div>
         
         <CategorySection 
           title="Innovations" 
           categorySlug="innovations"
-          stories={storiesData.innovations}
+          stories={storiesData.innovations || []}
         />
         
         <div className="bg-gradient-to-r from-youth-purple/10 to-youth-blue/10 py-10">
