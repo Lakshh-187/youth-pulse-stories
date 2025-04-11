@@ -13,7 +13,7 @@ export const storiesData = {
     publishedAt: "2 days ago",
     commentsCount: 24
   },
-  YLC : [
+  education: [
     {
       id: "college-alternatives",
       title: "Innovation by Youths",
