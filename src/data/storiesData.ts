@@ -54,7 +54,7 @@ export const storiesData = {
       commentsCount: 9
     }
   ],
-  Worldwide: [
+  worldwide: [
     {
       id: "social-media-mental-health",
       title: "Opportunities Worldwide",
