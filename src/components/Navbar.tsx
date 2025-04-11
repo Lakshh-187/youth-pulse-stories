@@ -1,12 +1,16 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Search, Menu, X } from 'lucide-react';
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  
   return <nav className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-sm border-b border-gray-100">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
@@ -27,7 +31,9 @@ const Navbar = () => {
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
             </Button>
-            <Button className="bg-youth-purple hover:bg-youth-purple/90">Subscribe</Button>
+            <Link to="https://linktr.ee/youngburg" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-youth-purple hover:bg-youth-purple/90">Get More</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -46,11 +52,14 @@ const Navbar = () => {
                 <Button variant="ghost" size="icon" className="mr-2">
                   <Search className="h-5 w-5" />
                 </Button>
-                <Button className="bg-youth-purple hover:bg-youth-purple/90 w-full">Subscribe</Button>
+                <Link to="https://linktr.ee/youngburg" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button className="bg-youth-purple hover:bg-youth-purple/90 w-full">Get More</Button>
+                </Link>
               </div>
             </div>
           </div>}
       </div>
     </nav>;
 };
+
 export default Navbar;
