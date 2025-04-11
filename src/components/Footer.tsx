@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -37,7 +38,8 @@ const Footer = () => {
           </div>
           
           <div className="text-center text-gray-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} Youth Pulse Stories. All rights reserved.</p>
+            <p className="mb-2">&copy; {new Date().getFullYear()} Youth Pulse Stories. All rights reserved.</p>
+            <Link to="/legal" className="text-youth-purple hover:underline">Legal Information</Link>
           </div>
         </div>
       </div>

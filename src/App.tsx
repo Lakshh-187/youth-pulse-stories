@@ -9,6 +9,7 @@ import Frontliner from "./pages/Frontliner";
 import TopOnePercent from "./pages/TopOnePercent";
 import NotFound from "./pages/NotFound";
 import ReferralPage from "./pages/ReferralPage";
+import Legal from "./pages/Legal";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/blogs" element={<NotFound />} /> {/* Placeholder for future blogs page */}
           <Route path="/blog/:id" element={<NotFound />} /> {/* Placeholder for future blog detail page */}
           <Route path="/referral/:storyId" element={<ReferralPage />} />
+          <Route path="/legal" element={<Legal />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
