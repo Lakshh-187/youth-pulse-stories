@@ -13,15 +13,15 @@ export const storiesData = {
     publishedAt: "2 days ago",
     commentsCount: 24
   },
-  education: [
+  YLC : [
     {
       id: "college-alternatives",
-      title: "Vanshu",
-      excerpt: "Why more young peo egrees.",
-      category: "the don",
+      title: "Innovation by Youths",
+      excerpt: "Explore the world’s most groundbreaking innovations led by students and young inventors shaping a better tomorrow.",
+      category: "YLC",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80",
       author: {
-        name: "Jamie Chen",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg"
       },
       publishedAt: "3 days ago",
@@ -29,12 +29,12 @@ export const storiesData = {
     },
     {
       id: "remote-learning",
-      title: "The Future of Remote Learning Post-Pandemic",
-      excerpt: "How virtual classrooms are evolving to provide better educational experiences.",
+      title: "✊ Social Activists",
+      excerpt: "Discover fearless young activists from around the globe who are standing up, speaking out, and making a difference.",
       category: "Education",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80",
       author: {
-        name: "Marcus Johnson",
+        Author: "LC Kahleer", 
         avatar: "https://randomuser.me/api/portraits/men/22.jpg"
       },
       publishedAt: "5 days ago",
@@ -42,27 +42,27 @@ export const storiesData = {
     },
     {
       id: "learning-disabilities",
-      title: "New Approaches to Learning Disabilities in Schools",
-      excerpt: "Innovative methods helping students with learning differences thrive in modern classrooms.",
+      title: "Initiators",
+      excerpt: "Meet the self-starters and idea-pioneers who turned small sparks into movements that inspire the world.",
       category: "Education",
       image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80",
       author: {
-        name: "Sophia Williams",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/63.jpg"
       },
       publishedAt: "1 week ago",
       commentsCount: 9
     }
   ],
-  technology: [
+  Worldwide: [
     {
       id: "social-media-mental-health",
-      title: "Social Media's Impact on Youth Mental Health",
-      excerpt: "Research reveals concerning patterns in how digital platforms affect teenage well-being.",
+      title: "Opportunities Worldwide",
+      excerpt: "From global fellowships to startup grants, discover golden chances waiting for you across borders and oceans.",
       category: "Technology",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80",
       author: {
-        name: "Ethan Brooks",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/41.jpg"
       },
       publishedAt: "2 days ago",
@@ -70,12 +70,12 @@ export const storiesData = {
     },
     {
       id: "coding-bootcamps",
-      title: "Are Coding Bootcamps Worth It? Young Developers Weigh In",
-      excerpt: "Success stories and cautionary tales from graduates of intensive programming courses.",
+      title: " Platforms That Uplift",
+      excerpt: "Explore youth-centric platforms, communities, and ecosystems that support your dreams and amplify your voice.",
       category: "Technology",
       image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80",
       author: {
-        name: "Olivia Martinez",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/12.jpg"
       },
       publishedAt: "4 days ago",
@@ -83,12 +83,12 @@ export const storiesData = {
     },
     {
       id: "gaming-education",
-      title: "How Gaming is Becoming a Legitimate Educational Tool",
-      excerpt: "The surprising ways video games are being used to teach everything from history to complex physics.",
+      title: "🔮 Illusions to Break",
+      excerpt: "Let go of the myths and limiting beliefs that stop most people. Bust the illusions and unlock your true potential.",
       category: "Technology",
       image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&q=80",
       author: {
-        name: "Noah Wilson",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/54.jpg"
       },
       publishedAt: "6 days ago",
@@ -103,7 +103,7 @@ export const storiesData = {
       category: "Innovations",
       image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&q=80",
       author: {
-        name: "Maya Robinson",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/28.jpg"
       },
       publishedAt: "1 day ago",
@@ -116,7 +116,7 @@ export const storiesData = {
       category: "Innovations",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
       author: {
-        name: "Ethan Kim",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/45.jpg"
       },
       publishedAt: "3 days ago",
@@ -129,7 +129,7 @@ export const storiesData = {
       category: "Innovations",
       image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&q=80",
       author: {
-        name: "Sophia Chen",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/39.jpg"
       },
       publishedAt: "4 days ago",
@@ -144,7 +144,7 @@ export const storiesData = {
       category: "Initiatives",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80",
       author: {
-        name: "Jordan Taylor",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/26.jpg"
       },
       publishedAt: "2 days ago",
@@ -157,7 +157,7 @@ export const storiesData = {
       category: "Initiatives",
       image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80",
       author: {
-        name: "Zoe Patel",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/42.jpg"
       },
       publishedAt: "5 days ago",
@@ -170,7 +170,7 @@ export const storiesData = {
       category: "Initiatives",
       image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80",
       author: {
-        name: "Marcus Johnson",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/59.jpg"
       },
       publishedAt: "1 week ago",
@@ -185,7 +185,7 @@ export const storiesData = {
       category: "Culture",
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80",
       author: {
-        name: "Zoe Thompson",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/23.jpg"
       },
       publishedAt: "1 day ago",
@@ -198,7 +198,7 @@ export const storiesData = {
       category: "Culture",
       image: "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&q=80",
       author: {
-        name: "Liam Garcia",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/67.jpg"
       },
       publishedAt: "3 days ago",
@@ -211,7 +211,7 @@ export const storiesData = {
       category: "Culture",
       image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80",
       author: {
-        name: "Maya Jackson",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/35.jpg"
       },
       publishedAt: "5 days ago",
@@ -226,7 +226,7 @@ export const storiesData = {
       category: "Environment",
       image: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?auto=format&fit=crop&q=80",
       author: {
-        name: "Ryan Lopez",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/74.jpg"
       },
       publishedAt: "2 days ago",
@@ -239,7 +239,7 @@ export const storiesData = {
       category: "Environment",
       image: "https://images.unsplash.com/photo-1544475762-f3e9570d31a2?auto=format&fit=crop&q=80",
       author: {
-        name: "Emma Davis",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/53.jpg"
       },
       publishedAt: "4 days ago",
@@ -252,7 +252,7 @@ export const storiesData = {
       category: "Environment",
       image: "https://images.unsplash.com/photo-1603568534547-541ebff4a5bj?auto=format&fit=crop&q=80",
       author: {
-        name: "Daniel Kim",
+        Author: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/86.jpg"
       },
       publishedAt: "6 days ago",
