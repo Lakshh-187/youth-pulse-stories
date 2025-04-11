@@ -1,3 +1,4 @@
+
 export const storiesData = {
   featured: {
     id: "digital-revolution",
@@ -23,7 +24,9 @@ export const storiesData = {
         name: "Jamie Chen",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg"
       },
-    
+      publishedAt: "3 days ago",
+      commentsCount: 8
+    },
     {
       id: "remote-learning",
       title: "The Future of Remote Learning Post-Pandemic",
