@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -13,7 +12,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <h1 className="text-2xl font-bold text-youth-purple">Youthburg</h1>
+            <h1 className="text-2xl font-bold text-youth-purple">Youngburg</h1>
           </Link>
 
           {/* Desktop Navigation */}
