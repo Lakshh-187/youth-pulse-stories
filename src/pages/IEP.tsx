@@ -36,6 +36,18 @@ import * as z from "zod";
 
 const IEP = () => {
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
+  const [showPremiumPopup, setShowPremiumPopup] = useState(false);
+
+  const handlePremiumFeatureClick = () => {
+    setShowPremiumPopup(true);
+  };
+
+  const closePremiumPopup = () => {
+    setShowPremiumPopup(false);
+  };
+
+  const isPremiumMember = false; // Replace with actual premium member check
+
 
   const handleComponentClick = (componentId: string) => {
     setActiveComponent(activeComponent === componentId ? null : componentId);
@@ -51,7 +63,7 @@ const IEP = () => {
         <div 
           className="relative bg-cover bg-center py-24" 
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1496307653780-42ee777d4833?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')"
+            backgroundImage: "url('https://risingunicorn.com/blog/dailydoseimage4.jpg')"
           }}
         >
           <div className="container mx-auto px-4">
@@ -75,12 +87,12 @@ const IEP = () => {
       </section>
 
       {/* Interactive Core Components Section */}
-      <section id="programs" className="py-20 bg-gray-50">
+      <section id="programs" className="py-20 bg-purple-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-2">Transform Your Institution</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Core Components of IEP</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-grey-600 max-w-3xl mx-auto mb-8">
               Our International Educational Program offers comprehensive solutions to elevate your 
               institution to global standards through these key pillars.
             </p>
@@ -91,7 +103,7 @@ const IEP = () => {
             <div className="md:w-1/3 lg:w-1/4 space-y-3">
               <Button 
                 onClick={() => handleComponentClick('programs')}
-                className={`w-full justify-start text-left py-6 ${activeComponent === 'programs' ? 'bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90' : 'bg-white hover:bg-gray-100'}`}
+                className={`w-full justify-start text-left py-6 ${activeComponent === 'programs' ? 'bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/50' : 'bg-white hover:bg--100'}`}
               >
                 <GraduationCap className={`h-5 w-5 mr-3 ${activeComponent === 'programs' ? 'text-[#7E69AB]' : ''}`} />
                 Academic Programs
@@ -418,8 +430,8 @@ const IEP = () => {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
-                      <Download className="mr-2 h-4 w-4" /> Download Report
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={handlePremiumFeatureClick}>
+                      <Download className="mr-2 h-4 w-4" /> Loading.....
                     </Button>
                   </CardFooter>
                 </Card>
@@ -441,8 +453,8 @@ const IEP = () => {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
-                      <Download className="mr-2 h-4 w-4" /> Download Report
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={handlePremiumFeatureClick}>
+                      <Download className="mr-2 h-4 w-4" /> Loading....
                     </Button>
                   </CardFooter>
                 </Card>
@@ -464,8 +476,8 @@ const IEP = () => {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
-                      <Download className="mr-2 h-4 w-4" /> Download Report
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={handlePremiumFeatureClick}>
+                      <Download className="mr-2 h-4 w-4" /> Loading...
                     </Button>
                   </CardFooter>
                 </Card>
@@ -487,7 +499,7 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                       Read Case Study
                     </Button>
                   </CardFooter>
@@ -506,7 +518,7 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                       Read Case Study
                     </Button>
                   </CardFooter>
@@ -525,7 +537,7 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                       Read Case Study
                     </Button>
                   </CardFooter>
@@ -548,7 +560,7 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                       <Download className="mr-2 h-4 w-4" /> Download Paper
                     </Button>
                   </CardFooter>
@@ -567,7 +579,7 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                       <Download className="mr-2 h-4 w-4" /> Download Paper
                     </Button>
                   </CardFooter>
@@ -586,7 +598,7 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                       <Download className="mr-2 h-4 w-4" /> Download Paper
                     </Button>
                   </CardFooter>
@@ -621,8 +633,8 @@ const IEP = () => {
                 <p className="text-gray-600 mb-6">
                   Access internationally-aligned educational frameworks for various subjects and grade levels.
                 </p>
-                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
-                  <Download className="mr-2 h-4 w-4" /> Download Resources
+                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={handlePremiumFeatureClick}>
+                  <Download className="mr-2 h-4 w-4" /> Loading...
                 </Button>
               </div>
             </div>
@@ -637,8 +649,8 @@ const IEP = () => {
                 <p className="text-gray-600 mb-6">
                   Comprehensive guides and references on modern educational methodologies and best practices.
                 </p>
-                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
-                  <Download className="mr-2 h-4 w-4" /> Download E-Books
+                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={handlePremiumFeatureClick}>
+                  <Download className="mr-2 h-4 w-4" /> Loading...
                 </Button>
               </div>
             </div>
@@ -653,8 +665,8 @@ const IEP = () => {
                 <p className="text-gray-600 mb-6">
                   Research findings and statistical information on global education trends and outcomes.
                 </p>
-                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
-                  <Download className="mr-2 h-4 w-4" /> Download Reports
+                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={handlePremiumFeatureClick}>
+                  <Download className="mr-2 h-4 w-4" /> Loading....
                 </Button>
               </div>
             </div>
@@ -669,8 +681,8 @@ const IEP = () => {
                 <p className="text-gray-600 mb-6">
                   Practical resources for assessment, curriculum planning, and implementation strategies.
                 </p>
-                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
-                  <Download className="mr-2 h-4 w-4" /> Download Templates
+                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90" onClick={handlePremiumFeatureClick}>
+                  <Download className="mr-2 h-4 w-4" /> Loading....
                 </Button>
               </div>
             </div>
@@ -679,7 +691,7 @@ const IEP = () => {
       </section>
 
       {/* Additional Opportunities with Yellowish Highlights */}
-      <section className="py-20 bg-gradient-to-r from-[#7E69AB]/90 to-[#D6BCFA]/70 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#b280ff]/90 to-[#b280ff]/80 text-dark bold white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="secondary" className="mb-2">Engagement Opportunities</Badge>
@@ -701,7 +713,7 @@ const IEP = () => {
                   Host international interns as seasonal teachers to bring global 
                   perspectives and fresh methodologies to your institution.
                 </p>
-                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                   Apply as Host Institution
                 </Button>
               </div>
@@ -717,7 +729,7 @@ const IEP = () => {
                   Implement transformative projects developed during our educational 
                   hackathons designed to solve real institutional challenges.
                 </p>
-                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                   Explore Projects
                 </Button>
               </div>
@@ -733,7 +745,7 @@ const IEP = () => {
                   Apply for Curriculum Reform grants designed to support institutions 
                   in their journey towards international standards.
                 </p>
-                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                   Apply for Grants
                 </Button>
               </div>
@@ -749,7 +761,7 @@ const IEP = () => {
                   Establish international clubs and societies in your institution to 
                   foster global citizenship and cross-cultural understanding.
                 </p>
-                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                   Start a Club
                 </Button>
               </div>
@@ -765,7 +777,7 @@ const IEP = () => {
                   Participate in specialized workshops designed to equip your faculty 
                   with international teaching methodologies and practices.
                 </p>
-                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                   Register for Workshops
                 </Button>
               </div>
@@ -781,7 +793,7 @@ const IEP = () => {
                   Join our network of partner institutions for collaborative projects, 
                   student exchanges, and shared educational resources.
                 </p>
-                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90" onClick={isPremiumMember ? () => {} : handlePremiumFeatureClick}>
                   Partner With Us
                 </Button>
               </div>
@@ -858,6 +870,25 @@ const IEP = () => {
       </section>
 
       <Footer />
+
+      {/* Premium Member Popup */}
+      {showPremiumPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-white rounded-lg p-8 max-w-md">
+            <h2 className="text-2xl font-bold mb-4">Premium Feature</h2>
+            <p className="mb-6">This feature is available for premium members only.</p>
+            <div className="flex justify-end">
+              <Button 
+                variant="outline" 
+                onClick={closePremiumPopup} 
+                className="mr-2"
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

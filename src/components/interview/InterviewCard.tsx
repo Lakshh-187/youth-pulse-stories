@@ -1,14 +1,22 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Check, X } from 'lucide-react';
 import { Interview } from '@/types/interviews';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 interface InterviewCardProps {
   interview: Interview;
 }
 
 const InterviewCard: React.FC<InterviewCardProps> = ({ interview }) => {
+  const [isPremiumPopupOpen, setIsPremiumPopupOpen] = useState(false);
+
+  const handleCardClick = () => {
+    setIsPremiumPopupOpen(true);
+  };
+
   return (
     <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className="p-6">
@@ -58,6 +66,24 @@ const InterviewCard: React.FC<InterviewCardProps> = ({ interview }) => {
             <p className="text-gray-500 text-sm">{interview.founder.date}</p>
           </div>
         </div>
+
+        {/* Make the right side clickable */}
+        <div 
+          className="absolute inset-0 bg-transparent cursor-pointer"
+          onClick={handleCardClick}
+        ></div>
+
+        {/* Premium Member Popup */}
+        <Dialog open={isPremiumPopupOpen} onOpenChange={setIsPremiumPopupOpen}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Premium Feature</DialogTitle>
+            </DialogHeader>
+            <p>This feature is available for premium members only.</p>
+            <Button onClick={() => setIsPremiumPopupOpen(false)}>Close</Button>
+          </DialogContent>
+        </Dialog>
+
       </div>
     </div>
   );
