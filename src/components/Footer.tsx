@@ -14,16 +14,16 @@ const Footer = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 mb-6">
-            <a href="https://facebook.com" className="text-gray-400 hover:text-youth-purple transition-colors" aria-label="Facebook">
+            <a href="https://www.linkedin.com/company/unikall" className="text-gray-400 hover:text-youth-purple transition-colors" aria-label="Facebook">
               <Facebook className="h-5 w-5" />
             </a>
             <a href="https://twitter.com" className="text-gray-400 hover:text-youth-purple transition-colors" aria-label="Twitter">
               <Twitter className="h-5 w-5" />
             </a>
-            <a href="https://instagram.com" className="text-gray-400 hover:text-youth-purple transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com/iyoungburg" className="text-gray-400 hover:text-youth-purple transition-colors" aria-label="Instagram">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="https://youtube.com" className="text-gray-400 hover:text-youth-purple transition-colors" aria-label="Youtube">
+            <a href="https://www.youtube.com/@YoungBurg-z8f" className="text-gray-400 hover:text-youth-purple transition-colors" aria-label="Youtube">
               <Youtube className="h-5 w-5" />
             </a>
           </div>
@@ -32,7 +32,7 @@ const Footer = () => {
             <a href="mailto:contact@youthpulse.com" className="flex items-center hover:text-youth-purple transition-colors">
               <Mail className="h-4 w-4 mr-2" /> info@youngburg.com
             </a>
-            <a href="https://wa.me/1234567890?text=I'm%20interested%20in%20joining%20the%20Youth%20Pulse%20community" className="flex items-center hover:text-youth-purple transition-colors">
+            <a href="https://wa.me/message/UDZ5KXII2XDAM1" className="flex items-center hover:text-youth-purple transition-colors">
               <Phone className="h-4 w-4 mr-2" /> WhatsApp Community
             </a>
           </div>

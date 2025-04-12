@@ -48,7 +48,7 @@ const ReferralPage = () => {
                 Your first dose of brilliance — get insights that make things click.
                 </p>
                 <Button className="bg-youth-purple hover:bg-youth-purple/90">
-                  <a href="https://example.com/special-offer-1" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.youngburg.com/top-one-percent" target="_blank" rel="noopener noreferrer">
                     start now
                   </a>
                 </Button>
@@ -60,7 +60,7 @@ const ReferralPage = () => {
                 Get exclusive access to top-secret insights, premium documents, and powerful strategies — updated weekly just for our trusted members.
                 </p>
                 <Button className="bg-youth-purple hover:bg-youth-purple/90">
-                  <a href="https://example.com/partnership" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.youngburg.com/top-one-percent" target="_blank" rel="noopener noreferrer">
                     Let's see
                   </a>
                 </Button>
@@ -72,7 +72,7 @@ const ReferralPage = () => {
                 Not FBI-level, but close enough.
                 </p>
                 <Button className="bg-youth-purple hover:bg-youth-purple/90">
-                  <a href="https://example.com/newsletter" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.youngburg.com/top-one-percent" target="_blank" rel="noopener noreferrer">
                     May be
                   </a>
                 </Button>
