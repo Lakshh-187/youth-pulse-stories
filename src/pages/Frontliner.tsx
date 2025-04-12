@@ -37,6 +37,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Separator } from '@/components/ui/separator';
 
 const Frontliner = () => {
@@ -274,11 +275,21 @@ const Frontliner = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4 text-gray-600">{platform.description}</p>
-                    <Button variant="outline" size="sm" className="w-full" asChild>
-                      <a href={platform.website} target="_blank" rel="noopener noreferrer">
-                        Publish soon <ExternalLink className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="outline" size="sm" className="w-full">
+                          Publishing soon
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Coming Soon!</DialogTitle>
+                          <DialogDescription>
+                            Thank you for reaching out! Exciting things are coming soon! 🚀
+                          </DialogDescription>
+                        </DialogHeader>
+                      </DialogContent>
+                    </Dialog>
                   </CardContent>
                 </Card>
               ))}
