@@ -23,15 +23,16 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* Program-related routes */}
           <Route path="/frontliner" element={<Frontliner />} />
           <Route path="/top-one-percent" element={<TopOnePercent />} />
           <Route path="/sep-700" element={<SEP700 />} />
           <Route path="/iep" element={<IEP />} />
-          <Route path="/blogs" element={<NotFound />} /> {/* Placeholder for future blogs page */}
-          <Route path="/blog/:id" element={<NotFound />} /> {/* Placeholder for future blog detail page */}
+          {/* Placeholder routes for future blog functionality */}
+          <Route path="/blogs" element={<NotFound />} /> {/* Blog listing page */}
+          <Route path="/blog/:id" element={<NotFound />} /> {/* Blog detail page */}
           <Route path="/referral/:storyId" element={<ReferralPage />} />
           <Route path="/legal" element={<Legal />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
