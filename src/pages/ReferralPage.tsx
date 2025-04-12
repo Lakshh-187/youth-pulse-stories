@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React from "react";
 import { useParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,9 +9,21 @@ import { Link } from 'react-router-dom';
 
 const ReferralPage = () => {
   const { storyId } = useParams();
-
+  const [showPopup, setShowPopup] = React.useState(false);
+  const popupMessage = "Only for Verified Premium Scholars";
+  const handleButtonClick = () => {
+    setShowPopup(true);
+  };
+  const closePopup = () => {
+    setShowPopup(false);
+  };
   return (
     <div className="min-h-screen flex flex-col">
+      <head>
+        <title>Youngburg Referral Program: Partner with Us</title>
+        <meta name="description" content="Learn about Youngburg's referral program and partnership opportunities. Collaborate with us to empower more students through uni-pitch, sep-700, and other initiatives." />
+        <meta name="keywords" content="youngburg, referral program, partnerships, collaboration, opportunities, uni-pitch, sep-700, iep" />
+      </head>
       <Navbar />
       
       <main className="flex-grow container mx-auto px-4 py-12">

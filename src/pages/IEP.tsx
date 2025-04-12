@@ -55,6 +55,11 @@ const IEP = () => {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <head>
+        <title>Youngburg IEP Resources: Your Guide to International Education</title>
+        <meta name="description" content="Find comprehensive resources for International Education Programs (IEP) at Youngburg. Download materials and explore opportunities related to uni-pitch and global academic standards." />
+        <meta name="keywords" content="youngburg, iep, International Education Program, study abroad, educational resources, international standards, uni-pitch, sep-700, stanburg" />
+      </head>
       <Navbar />
       
       {/* Hero Section */}

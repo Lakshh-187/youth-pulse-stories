@@ -1044,10 +1044,8 @@ const SEP700 = () => {
 
   // Filter opportunities based on selected filters
   const filteredOpportunities = opportunitiesData.filter(opportunity => {
-    const matchesSearch = searchTerm === '' || 
-      opportunity.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      opportunity.institution.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      opportunity.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = searchTerm === '' ||
+      opportunity.title.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesCategory = selectedCategory === null || opportunity.category === selectedCategory;
     
