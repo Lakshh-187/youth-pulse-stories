@@ -2,16 +2,16 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { FileText, Globe, GraduationCap, Award, Search } from 'lucide-react';
+import { FileText, Globe, GraduationCap, Award, Search, Grid2X2, List, Table2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 
 // Sample opportunity data - in a real scenario, this would come from an API or database
 const opportunitiesData = [
@@ -89,17 +89,15 @@ const opportunitiesData = [
   }
 ];
 
-// Extract unique values for filters
-const uniqueCountries = [...new Set(opportunitiesData.map(opp => opp.country))];
+// Extract unique values for categories
 const uniqueCategories = [...new Set(opportunitiesData.map(opp => opp.category))];
-const uniqueFunding = [...new Set(opportunitiesData.map(opp => opp.funding))];
 
 const SEP700 = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedFunding, setSelectedFunding] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list' | 'table'>('grid');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   // Filter opportunities based on selected filters
   const filteredOpportunities = opportunitiesData.filter(opportunity => {
@@ -108,12 +106,54 @@ const SEP700 = () => {
       opportunity.institution.toLowerCase().includes(searchTerm.toLowerCase()) ||
       opportunity.description.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesCountry = selectedCountry === null || opportunity.country === selectedCountry;
     const matchesCategory = selectedCategory === null || opportunity.category === selectedCategory;
-    const matchesFunding = selectedFunding === null || opportunity.funding === selectedFunding;
     
-    return matchesSearch && matchesCountry && matchesCategory && matchesFunding;
+    return matchesSearch && matchesCategory;
   });
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredOpportunities.length / itemsPerPage);
+  const paginatedOpportunities = filteredOpportunities.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  // Generate page numbers for pagination
+  const pageNumbers = [];
+  const maxVisiblePages = 5;
+  
+  if (totalPages <= maxVisiblePages) {
+    // Show all pages if total pages are less than or equal to max visible pages
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+  } else {
+    // Always show first and last pages
+    if (currentPage <= 3) {
+      // If current page is near the beginning
+      for (let i = 1; i <= 4; i++) {
+        pageNumbers.push(i);
+      }
+      pageNumbers.push('ellipsis');
+      pageNumbers.push(totalPages);
+    } else if (currentPage >= totalPages - 2) {
+      // If current page is near the end
+      pageNumbers.push(1);
+      pageNumbers.push('ellipsis');
+      for (let i = totalPages - 3; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      // If current page is in the middle
+      pageNumbers.push(1);
+      pageNumbers.push('ellipsis');
+      for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+        pageNumbers.push(i);
+      }
+      pageNumbers.push('ellipsis');
+      pageNumbers.push(totalPages);
+    }
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -168,64 +208,52 @@ const SEP700 = () => {
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="grid" id="grid" />
-                  <label htmlFor="grid">Grid</label>
+                  <label htmlFor="grid" className="flex items-center">
+                    <Grid2X2 className="h-4 w-4 mr-1" />
+                    Grid
+                  </label>
                 </div>
                 <div className="flex items-center space-x-2 ml-4">
                   <RadioGroupItem value="list" id="list" />
-                  <label htmlFor="list">List</label>
+                  <label htmlFor="list" className="flex items-center">
+                    <List className="h-4 w-4 mr-1" />
+                    List
+                  </label>
                 </div>
                 <div className="flex items-center space-x-2 ml-4">
                   <RadioGroupItem value="table" id="table" />
-                  <label htmlFor="table">Table</label>
+                  <label htmlFor="table" className="flex items-center">
+                    <Table2 className="h-4 w-4 mr-1" />
+                    Table
+                  </label>
                 </div>
               </RadioGroup>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-1">Country</label>
-              <Select onValueChange={(value) => setSelectedCountry(value === "all" ? null : value)}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Countries" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Countries</SelectItem>
-                  {uniqueCountries.map(country => (
-                    <SelectItem key={country} value={country}>{country}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-1">Category</label>
-              <Select onValueChange={(value) => setSelectedCategory(value === "all" ? null : value)}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Categories" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Categories</SelectItem>
-                  {uniqueCategories.map(category => (
-                    <SelectItem key={category} value={category}>{category}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-1">Funding</label>
-              <Select onValueChange={(value) => setSelectedFunding(value === "all" ? null : value)}>
-                <SelectTrigger>
-                  <SelectValue placeholder="All Funding Types" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Funding Types</SelectItem>
-                  {uniqueFunding.map(funding => (
-                    <SelectItem key={funding} value={funding}>{funding}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+          <div className="mb-6">
+            <h3 className="text-sm font-medium mb-3">Categories</h3>
+            <div className="flex flex-wrap gap-2">
+              <Button 
+                variant={selectedCategory === null ? "default" : "outline"}
+                size="sm"
+                className="rounded-full transition-all"
+                onClick={() => setSelectedCategory(null)}
+              >
+                All Categories
+              </Button>
+              
+              {uniqueCategories.map(category => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  size="sm"
+                  className="rounded-full transition-all"
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
           </div>
         </div>
@@ -233,7 +261,7 @@ const SEP700 = () => {
         <div className="mb-6">
           <h2 className="text-2xl font-semibold mb-2">Available Opportunities</h2>
           <p className="text-gray-600">
-            Showing {filteredOpportunities.length} of {opportunitiesData.length} opportunities
+            Showing {Math.min(itemsPerPage, paginatedOpportunities.length)} of {filteredOpportunities.length} opportunities
           </p>
         </div>
         
@@ -252,34 +280,16 @@ const SEP700 = () => {
             </TabsList>
             
             <TabsContent value="grid">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredOpportunities.map(opportunity => (
-                  <Card key={opportunity.id} className="hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <div className="flex justify-between items-start">
-                        <CardTitle className="text-lg">{opportunity.title}</CardTitle>
-                        <Badge variant="outline" className="capitalize">{opportunity.category}</Badge>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {paginatedOpportunities.map(opportunity => (
+                  <Card key={opportunity.id} className="hover:shadow-lg transition-shadow flex flex-col">
+                    <CardHeader className="pb-2">
+                      <div className="flex justify-between items-start gap-2">
+                        <CardTitle className="text-base line-clamp-2">{opportunity.title}</CardTitle>
+                        <Badge variant="outline" className="shrink-0 capitalize">{opportunity.category}</Badge>
                       </div>
-                      <CardDescription>{opportunity.institution}, {opportunity.country}</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-gray-600 mb-4">{opportunity.description}</p>
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div>
-                          <span className="font-medium">Duration:</span> {opportunity.duration}
-                        </div>
-                        <div>
-                          <span className="font-medium">Funding:</span> {opportunity.funding}
-                        </div>
-                        <div>
-                          <span className="font-medium">Deadline:</span> {new Date(opportunity.deadline).toLocaleDateString()}
-                        </div>
-                        <div>
-                          <span className="font-medium">Eligibility:</span> {opportunity.eligibility.split(',')[0]}...
-                        </div>
-                      </div>
-                    </CardContent>
-                    <CardFooter>
+                    <CardFooter className="mt-auto pt-2">
                       <Button className="w-full bg-youth-purple hover:bg-youth-purple/90">View Details</Button>
                     </CardFooter>
                   </Card>
@@ -289,23 +299,14 @@ const SEP700 = () => {
             
             <TabsContent value="list">
               <div className="space-y-4">
-                {filteredOpportunities.map(opportunity => (
+                {paginatedOpportunities.map(opportunity => (
                   <div key={opportunity.id} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-start justify-between">
-                          <h3 className="font-semibold text-lg">{opportunity.title}</h3>
-                          <Badge variant="outline" className="capitalize">{opportunity.category}</Badge>
-                        </div>
-                        <p className="text-gray-600 mb-2">{opportunity.institution}, {opportunity.country}</p>
-                        <p className="text-sm text-gray-600">{opportunity.description}</p>
+                    <div className="flex justify-between items-center gap-4">
+                      <div>
+                        <h3 className="font-semibold">{opportunity.title}</h3>
+                        <Badge variant="outline" className="mt-1 capitalize">{opportunity.category}</Badge>
                       </div>
-                      <div className="shrink-0">
-                        <div className="text-sm mb-2">
-                          <span className="font-medium">Deadline:</span> {new Date(opportunity.deadline).toLocaleDateString()}
-                        </div>
-                        <Button className="w-full bg-youth-purple hover:bg-youth-purple/90">View Details</Button>
-                      </div>
+                      <Button className="shrink-0 bg-youth-purple hover:bg-youth-purple/90">View Details</Button>
                     </div>
                   </div>
                 ))}
@@ -318,27 +319,19 @@ const SEP700 = () => {
                   <TableHeader>
                     <TableRow>
                       <TableHead>Title</TableHead>
-                      <TableHead>Institution</TableHead>
-                      <TableHead>Country</TableHead>
                       <TableHead>Category</TableHead>
-                      <TableHead>Deadline</TableHead>
-                      <TableHead>Funding</TableHead>
                       <TableHead className="text-right">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {filteredOpportunities.map(opportunity => (
+                    {paginatedOpportunities.map(opportunity => (
                       <TableRow key={opportunity.id}>
                         <TableCell className="font-medium">{opportunity.title}</TableCell>
-                        <TableCell>{opportunity.institution}</TableCell>
-                        <TableCell>{opportunity.country}</TableCell>
                         <TableCell>
                           <Badge variant="outline" className="capitalize">{opportunity.category}</Badge>
                         </TableCell>
-                        <TableCell>{new Date(opportunity.deadline).toLocaleDateString()}</TableCell>
-                        <TableCell>{opportunity.funding}</TableCell>
                         <TableCell className="text-right">
-                          <Button variant="outline" size="sm">View</Button>
+                          <Button variant="outline" size="sm">View Details</Button>
                         </TableCell>
                       </TableRow>
                     ))}
@@ -347,6 +340,45 @@ const SEP700 = () => {
               </div>
             </TabsContent>
           </Tabs>
+        )}
+        
+        {totalPages > 1 && (
+          <div className="mt-8">
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious 
+                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                    className={currentPage === 1 ? "opacity-50 pointer-events-none" : ""}
+                  />
+                </PaginationItem>
+                
+                {pageNumbers.map((pageNumber, index) => 
+                  pageNumber === 'ellipsis' ? (
+                    <PaginationItem key={`ellipsis-${index}`}>
+                      <PaginationEllipsis />
+                    </PaginationItem>
+                  ) : (
+                    <PaginationItem key={pageNumber}>
+                      <PaginationLink 
+                        isActive={currentPage === pageNumber}
+                        onClick={() => setCurrentPage(pageNumber as number)}
+                      >
+                        {pageNumber}
+                      </PaginationLink>
+                    </PaginationItem>
+                  )
+                )}
+                
+                <PaginationItem>
+                  <PaginationNext 
+                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                    className={currentPage === totalPages ? "opacity-50 pointer-events-none" : ""}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </div>
         )}
         
         <div className="mt-12 bg-gray-50 rounded-lg p-6">
