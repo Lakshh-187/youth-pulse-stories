@@ -20,10 +20,10 @@ interface CategorySectionProps {
     };
     publishedAt: string;
     commentsCount: number;
-  }>;
+  }> | undefined;
 }
 
-const CategorySection: React.FC<CategorySectionProps> = ({ title, categorySlug, stories }) => {
+const CategorySection: React.FC<CategorySectionProps> = ({ title, categorySlug, stories = [] }) => {
   return (
     <section className="py-8 md:py-12">
       <div className="container mx-auto px-4">
@@ -37,21 +37,27 @@ const CategorySection: React.FC<CategorySectionProps> = ({ title, categorySlug, 
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {stories.map((story) => (
-            <StoryCard
-              key={story.id}
-              id={story.id}
-              title={story.title}
-              excerpt={story.excerpt}
-              category={story.category}
-              image={story.image}
-              author={story.author}
-              publishedAt={story.publishedAt}
-              commentsCount={story.commentsCount}
-              hasReadMore={true}
-              referralLink={`/referral/${story.id}`}
-            />
-          ))}
+          {stories && stories.length > 0 ? (
+            stories.map((story) => (
+              <StoryCard
+                key={story.id}
+                id={story.id}
+                title={story.title}
+                excerpt={story.excerpt}
+                category={story.category}
+                image={story.image}
+                author={story.author}
+                publishedAt={story.publishedAt}
+                commentsCount={story.commentsCount}
+                hasReadMore={true}
+                referralLink={`/referral/${story.id}`}
+              />
+            ))
+          ) : (
+            <div className="col-span-3 text-center py-8 text-gray-500">
+              No stories available for this category yet.
+            </div>
+          )}
         </div>
       </div>
     </section>

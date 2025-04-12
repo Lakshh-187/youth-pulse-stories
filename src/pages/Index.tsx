@@ -19,14 +19,14 @@ const Index = () => {
         <CategorySection 
           title="Education" 
           categorySlug="education"
-          stories={storiesData.education}
+          stories={storiesData.education || []}
         />
         
         <div className="bg-gray-50 py-8">
           <CategorySection 
             title="Technology" 
             categorySlug="worldwide"
-            stories={storiesData.worldwide}
+            stories={storiesData.worldwide || []}
           />
         </div>
         
@@ -44,7 +44,7 @@ const Index = () => {
           <CategorySection 
             title="" 
             categorySlug="initiatives"
-            stories={storiesData.initiatives}
+            stories={storiesData.initiatives || []}
           />
         </div>
         
