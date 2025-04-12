@@ -1,15 +1,21 @@
-
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { 
   Building, GraduationCap, BookOpen, Lightbulb, 
   Download, Image, FileText, Users, Award, Globe,
-  ArrowRight, Send
+  ArrowRight, Send, ExternalLink
 } from "lucide-react";
 import { 
   Card, CardContent, CardDescription, 
@@ -29,6 +35,12 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 const IEP = () => {
+  const [activeComponent, setActiveComponent] = useState<string | null>(null);
+
+  const handleComponentClick = (componentId: string) => {
+    setActiveComponent(activeComponent === componentId ? null : componentId);
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -62,167 +74,234 @@ const IEP = () => {
         </div>
       </section>
 
-      {/* Main Navigation Cards */}
+      {/* Interactive Core Components Section */}
       <section id="programs" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-2">Transform Your Institution</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Core Components of IEP</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
               Our International Educational Program offers comprehensive solutions to elevate your 
               institution to global standards through these key pillars.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Programs Card */}
-            <Card className="transition-all hover:shadow-lg border-t-4 border-t-purple-500">
-              <CardHeader className="pb-4">
-                <GraduationCap className="h-10 w-10 text-purple-500 mb-2" />
-                <CardTitle>Academic Programs</CardTitle>
-                <CardDescription>
-                  Internationally accredited programs that enhance learning outcomes
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pb-4">
-                <p className="text-sm text-gray-600">
-                  Access a wide range of academic programs designed to align with global standards 
-                  and facilitate student success in an international context.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button variant="ghost" className="text-purple-600 p-0 hover:text-purple-800 hover:bg-transparent">
-                  Learn more <ArrowRight className="h-4 w-4 ml-1" />
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Establishments Card */}
-            <Card className="transition-all hover:shadow-lg border-t-4 border-t-blue-500">
-              <CardHeader className="pb-4">
-                <Building className="h-10 w-10 text-blue-500 mb-2" />
-                <CardTitle>Establishments</CardTitle>
-                <CardDescription>
-                  Infrastructure and facilities that meet global standards
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pb-4">
-                <p className="text-sm text-gray-600">
-                  Transform your physical and digital infrastructure to provide an ideal learning 
-                  environment that facilitates global education standards.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button variant="ghost" className="text-blue-600 p-0 hover:text-blue-800 hover:bg-transparent">
-                  Learn more <ArrowRight className="h-4 w-4 ml-1" />
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Curriculum Card */}
-            <Card className="transition-all hover:shadow-lg border-t-4 border-t-green-500">
-              <CardHeader className="pb-4">
-                <BookOpen className="h-10 w-10 text-green-500 mb-2" />
-                <CardTitle>Curriculum</CardTitle>
-                <CardDescription>
-                  Modern, engaging syllabus aligned with global standards
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pb-4">
-                <p className="text-sm text-gray-600">
-                  Our curriculum integrates the best educational practices from around the world, 
-                  promoting critical thinking and comprehensive skill development.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button variant="ghost" className="text-green-600 p-0 hover:text-green-800 hover:bg-transparent">
-                  Learn more <ArrowRight className="h-4 w-4 ml-1" />
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Innovation Card */}
-            <Card className="transition-all hover:shadow-lg border-t-4 border-t-orange-500">
-              <CardHeader className="pb-4">
-                <Lightbulb className="h-10 w-10 text-orange-500 mb-2" />
-                <CardTitle>Innovation</CardTitle>
-                <CardDescription>
-                  Cutting-edge educational technologies and methodologies
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pb-4">
-                <p className="text-sm text-gray-600">
-                  Integrate innovative teaching methods and technologies to create an engaging, 
-                  effective learning environment for the 21st century.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button variant="ghost" className="text-orange-600 p-0 hover:text-orange-800 hover:bg-transparent">
-                  Learn more <ArrowRight className="h-4 w-4 ml-1" />
-                </Button>
-              </CardFooter>
-            </Card>
+          <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+            {/* Component Navigation */}
+            <div className="md:w-1/3 lg:w-1/4 space-y-3">
+              <Button 
+                onClick={() => handleComponentClick('programs')}
+                className={`w-full justify-start text-left py-6 ${activeComponent === 'programs' ? 'bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90' : 'bg-white hover:bg-gray-100'}`}
+              >
+                <GraduationCap className={`h-5 w-5 mr-3 ${activeComponent === 'programs' ? 'text-[#7E69AB]' : ''}`} />
+                Academic Programs
+              </Button>
+              
+              <Button 
+                onClick={() => handleComponentClick('establishments')}
+                className={`w-full justify-start text-left py-6 ${activeComponent === 'establishments' ? 'bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90' : 'bg-white hover:bg-gray-100'}`}
+              >
+                <Building className={`h-5 w-5 mr-3 ${activeComponent === 'establishments' ? 'text-[#7E69AB]' : ''}`} />
+                Establishments
+              </Button>
+              
+              <Button 
+                onClick={() => handleComponentClick('curriculum')}
+                className={`w-full justify-start text-left py-6 ${activeComponent === 'curriculum' ? 'bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90' : 'bg-white hover:bg-gray-100'}`}
+              >
+                <BookOpen className={`h-5 w-5 mr-3 ${activeComponent === 'curriculum' ? 'text-[#7E69AB]' : ''}`} />
+                Curriculum
+              </Button>
+              
+              <Button 
+                onClick={() => handleComponentClick('innovation')}
+                className={`w-full justify-start text-left py-6 ${activeComponent === 'innovation' ? 'bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90' : 'bg-white hover:bg-gray-100'}`}
+              >
+                <Lightbulb className={`h-5 w-5 mr-3 ${activeComponent === 'innovation' ? 'text-[#7E69AB]' : ''}`} />
+                Innovation
+              </Button>
+            </div>
+            
+            {/* Component Content */}
+            <div className="md:w-2/3 lg:w-3/4 bg-white rounded-xl shadow-md overflow-hidden">
+              {activeComponent === 'programs' && (
+                <div className="p-6 md:p-8 animate-fade-in">
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#7E69AB] mb-2">Academic Programs</h3>
+                      <p className="text-gray-600">Internationally accredited programs that enhance learning outcomes</p>
+                    </div>
+                    <GraduationCap className="h-16 w-16 text-[#7E69AB]/20" />
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">K-12 International Programs</h4>
+                      <p className="text-gray-600">Comprehensive educational frameworks aligned with global standards for primary and secondary education.</p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">STEM Excellence Initiative</h4>
+                      <p className="text-gray-600">Advanced science, technology, engineering, and mathematics programs with hands-on learning approaches.</p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Global Languages Framework</h4>
+                      <p className="text-gray-600">Multilingual education strategies to prepare students for international communication and cultural exchange.</p>
+                    </div>
+                  </div>
+                  
+                  <Button className="mt-8 bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    Explore All Programs <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+              
+              {activeComponent === 'establishments' && (
+                <div className="p-6 md:p-8 animate-fade-in">
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#7E69AB] mb-2">Establishments</h3>
+                      <p className="text-gray-600">Infrastructure and facilities that meet global standards</p>
+                    </div>
+                    <Building className="h-16 w-16 text-[#7E69AB]/20" />
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Smart Campus Development</h4>
+                      <p className="text-gray-600">Technologically advanced infrastructure with IoT integration for improved learning and administrative efficiency.</p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Sustainable School Design</h4>
+                      <p className="text-gray-600">Eco-friendly campus development with renewable energy integration and sustainable architectural principles.</p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Digital Infrastructure</h4>
+                      <p className="text-gray-600">Comprehensive technological foundation including high-speed networks, cloud systems, and digital learning platforms.</p>
+                    </div>
+                  </div>
+                  
+                  <Button className="mt-8 bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    Explore All Facilities <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+              
+              {activeComponent === 'curriculum' && (
+                <div className="p-6 md:p-8 animate-fade-in">
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#7E69AB] mb-2">Curriculum</h3>
+                      <p className="text-gray-600">Modern, engaging syllabus aligned with global standards</p>
+                    </div>
+                    <BookOpen className="h-16 w-16 text-[#7E69AB]/20" />
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Competency-Based Learning</h4>
+                      <p className="text-gray-600">Curriculum focused on skills development and practical application rather than rote memorization.</p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Cross-Cultural Integration</h4>
+                      <p className="text-gray-600">Educational content that incorporates global perspectives while preserving local cultural context.</p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Future-Ready Skills Framework</h4>
+                      <p className="text-gray-600">Curriculum elements focused on digital literacy, critical thinking, collaboration, and adaptability for future careers.</p>
+                    </div>
+                  </div>
+                  
+                  <Button className="mt-8 bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    Explore Curriculum Models <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+              
+              {activeComponent === 'innovation' && (
+                <div className="p-6 md:p-8 animate-fade-in">
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#7E69AB] mb-2">Innovation</h3>
+                      <p className="text-gray-600">Cutting-edge educational technologies and methodologies</p>
+                    </div>
+                    <Lightbulb className="h-16 w-16 text-[#7E69AB]/20" />
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">AI-Assisted Learning</h4>
+                      <p className="text-gray-600">Integration of artificial intelligence for personalized learning paths and adaptive educational content.</p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Virtual Reality Classrooms</h4>
+                      <p className="text-gray-600">Immersive learning environments that transform abstract concepts into interactive experiences.</p>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h4 className="font-semibold mb-2">Project-Based Learning Labs</h4>
+                      <p className="text-gray-600">Dedicated spaces and methodologies for hands-on, collaborative problem-solving and innovation.</p>
+                    </div>
+                  </div>
+                  
+                  <Button className="mt-8 bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    Explore All Innovations <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+              
+              {!activeComponent && (
+                <div className="flex items-center justify-center h-full p-12 text-center">
+                  <div>
+                    <Lightbulb className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+                    <h3 className="text-xl font-medium text-gray-500">Select a component to see details</h3>
+                    <p className="text-gray-400 mt-2">Click on one of the options on the left to explore</p>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Application Form Section */}
+      {/* Simplified Application Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-12">
-            <div className="lg:w-1/2">
-              <Badge variant="outline" className="mb-2">Join Our Network</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Apply for IEP Integration</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Transform your educational institution by integrating our International Educational Program. 
-                Fill out the application form to start the journey toward global standards.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-                    <Building className="h-5 w-5 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium">Comprehensive Assessment</h3>
-                    <p className="text-gray-600">Our team evaluates your current infrastructure and academic processes</p>
-                  </div>
+          <div className="text-center max-w-3xl mx-auto">
+            <Badge variant="outline" className="mb-2">Join Our Network</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Apply for IEP Integration</h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Transform your educational institution by integrating our International Educational Program. 
+              Complete our simple application form to start the journey toward global standards.
+            </p>
+            
+            <div className="bg-[#F9FAFB] rounded-xl p-8 shadow-sm">
+              <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-8">
+                <div className="flex-shrink-0 bg-[#EDE9F7] h-20 w-20 rounded-full flex items-center justify-center">
+                  <Send className="h-8 w-8 text-[#7E69AB]" />
                 </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                    <BookOpen className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium">Customized Implementation</h3>
-                    <p className="text-gray-600">We develop a tailored plan to integrate IEP into your institution</p>
-                  </div>
+                <div className="flex-grow text-left max-w-md">
+                  <h3 className="text-xl font-bold mb-2">Ready to transform your institution?</h3>
+                  <p className="text-gray-600 mb-4">Our application process is simple and our team will guide you through every step.</p>
+                  <Button asChild size="lg" className="bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                    <a href="https://forms.google.com/iep-application" target="_blank" rel="noopener noreferrer">
+                      Apply Now <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
-                    <GraduationCap className="h-5 w-5 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium">Continuous Support</h3>
-                    <p className="text-gray-600">Ongoing assistance and resources for sustainable transformation</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2">
-              <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-6 text-center">Application Form</h3>
-                
-                <ApplicationForm />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Image Gallery Section */}
+      {/* Interactive Image Gallery with Carousel */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -234,80 +313,68 @@ const IEP = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Gallery Item 1 */}
-            <div className="overflow-hidden rounded-lg shadow-md group">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
-                  alt="International School Building" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button variant="secondary" size="sm">
-                    <Image className="mr-2 h-4 w-4" /> View Gallery
-                  </Button>
-                </div>
+          <div className="max-w-5xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="overflow-hidden rounded-xl">
+                      <img 
+                        src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+                        alt="International School Building" 
+                        className="w-full h-[400px] object-cover"
+                      />
+                      <div className="p-6 bg-white">
+                        <Badge className="mb-2" variant="outline">North America</Badge>
+                        <h3 className="text-xl font-bold">Cambridge International School</h3>
+                        <p className="text-gray-600">A model of excellence in international education standards with state-of-the-art facilities.</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="overflow-hidden rounded-xl">
+                      <img 
+                        src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+                        alt="Digital Learning Environment" 
+                        className="w-full h-[400px] object-cover"
+                      />
+                      <div className="p-6 bg-white">
+                        <Badge className="mb-2" variant="outline">Europe</Badge>
+                        <h3 className="text-xl font-bold">Global Tech Academy</h3>
+                        <p className="text-gray-600">Pioneering digital learning environments and innovative teaching methodologies.</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <div className="overflow-hidden rounded-xl">
+                      <img 
+                        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+                        alt="Innovative Learning Environment" 
+                        className="w-full h-[400px] object-cover"
+                      />
+                      <div className="p-6 bg-white">
+                        <Badge className="mb-2" variant="outline">Asia</Badge>
+                        <h3 className="text-xl font-bold">Innovation Learning Hub</h3>
+                        <p className="text-gray-600">Merging tradition with cutting-edge educational technology for holistic development.</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <div className="flex justify-center mt-6">
+                <CarouselPrevious className="relative static translate-y-0 left-0 mr-2" />
+                <CarouselNext className="relative static translate-y-0 right-0" />
               </div>
-              <div className="p-4">
-                <Badge className="mb-2" variant="outline">North America</Badge>
-                <h3 className="font-bold">Cambridge International School</h3>
-                <p className="text-sm text-gray-600">A model of excellence in international education standards</p>
-              </div>
-            </div>
-
-            {/* Gallery Item 2 */}
-            <div className="overflow-hidden rounded-lg shadow-md group">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
-                  alt="Digital Learning Environment" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button variant="secondary" size="sm">
-                    <Image className="mr-2 h-4 w-4" /> View Gallery
-                  </Button>
-                </div>
-              </div>
-              <div className="p-4">
-                <Badge className="mb-2" variant="outline">Europe</Badge>
-                <h3 className="font-bold">Global Tech Academy</h3>
-                <p className="text-sm text-gray-600">Pioneering digital learning environments</p>
-              </div>
-            </div>
-
-            {/* Gallery Item 3 */}
-            <div className="overflow-hidden rounded-lg shadow-md group">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
-                  alt="Innovative Learning Environment" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button variant="secondary" size="sm">
-                    <Image className="mr-2 h-4 w-4" /> View Gallery
-                  </Button>
-                </div>
-              </div>
-              <div className="p-4">
-                <Badge className="mb-2" variant="outline">Asia</Badge>
-                <h3 className="font-bold">Innovation Learning Hub</h3>
-                <p className="text-sm text-gray-600">Merging tradition with cutting-edge educational technology</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-10">
-            <Button size="lg">
-              View All Galleries <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            </Carousel>
           </div>
         </div>
       </section>
 
-      {/* Publications Section */}
+      {/* Publications Section with Tabs */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -320,16 +387,21 @@ const IEP = () => {
           </div>
 
           <Tabs defaultValue="reports" className="w-full">
-            <TabsList className="w-full flex justify-center mb-8">
-              <TabsTrigger value="reports">Reports</TabsTrigger>
-              <TabsTrigger value="casestudies">Case Studies</TabsTrigger>
-              <TabsTrigger value="research">Research Papers</TabsTrigger>
+            <TabsList className="w-full flex justify-center mb-8 p-1 bg-[#EDE9F7] rounded-lg max-w-md mx-auto">
+              <TabsTrigger value="reports" className="rounded-md data-[state=active]:bg-[#7E69AB] data-[state=active]:text-white">
+                Reports
+              </TabsTrigger>
+              <TabsTrigger value="casestudies" className="rounded-md data-[state=active]:bg-[#7E69AB] data-[state=active]:text-white">
+                Case Studies
+              </TabsTrigger>
+              <TabsTrigger value="research" className="rounded-md data-[state=active]:bg-[#7E69AB] data-[state=active]:text-white">
+                Research Papers
+              </TabsTrigger>
             </TabsList>
             
             <TabsContent value="reports" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Report 1 */}
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="secondary" className="mb-2 w-fit">Annual Report</Badge>
                     <CardTitle>Global Education Trends 2025</CardTitle>
@@ -346,14 +418,13 @@ const IEP = () => {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       <Download className="mr-2 h-4 w-4" /> Download Report
                     </Button>
                   </CardFooter>
                 </Card>
 
-                {/* Report 2 */}
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="info" className="mb-2 w-fit">Impact Study</Badge>
                     <CardTitle>Digital Transformation in Education</CardTitle>
@@ -370,14 +441,13 @@ const IEP = () => {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       <Download className="mr-2 h-4 w-4" /> Download Report
                     </Button>
                   </CardFooter>
                 </Card>
 
-                {/* Report 3 */}
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="warning" className="mb-2 w-fit">Whitepaper</Badge>
                     <CardTitle>Curriculum Development Framework</CardTitle>
@@ -394,24 +464,17 @@ const IEP = () => {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       <Download className="mr-2 h-4 w-4" /> Download Report
                     </Button>
                   </CardFooter>
                 </Card>
               </div>
-
-              <div className="text-center mt-8">
-                <Button variant="outline" size="lg">
-                  View All Reports <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
             </TabsContent>
 
             <TabsContent value="casestudies">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Case Studies content */}
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="success" className="mb-2 w-fit">Success Story</Badge>
                     <CardTitle>International School of Helsinki</CardTitle>
@@ -424,13 +487,13 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       Read Case Study
                     </Button>
                   </CardFooter>
                 </Card>
 
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="success" className="mb-2 w-fit">Success Story</Badge>
                     <CardTitle>Singapore Global Academy</CardTitle>
@@ -443,13 +506,13 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       Read Case Study
                     </Button>
                   </CardFooter>
                 </Card>
 
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="success" className="mb-2 w-fit">Success Story</Badge>
                     <CardTitle>Brazilian Tech Institute</CardTitle>
@@ -462,7 +525,7 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       Read Case Study
                     </Button>
                   </CardFooter>
@@ -472,8 +535,7 @@ const IEP = () => {
 
             <TabsContent value="research">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Research Papers content */}
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="secondary" className="mb-2 w-fit">Research</Badge>
                     <CardTitle>Effectiveness of Hybrid Learning Models</CardTitle>
@@ -486,13 +548,13 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       <Download className="mr-2 h-4 w-4" /> Download Paper
                     </Button>
                   </CardFooter>
                 </Card>
 
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="secondary" className="mb-2 w-fit">Research</Badge>
                     <CardTitle>Cultural Integration in Global Curricula</CardTitle>
@@ -505,13 +567,13 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       <Download className="mr-2 h-4 w-4" /> Download Paper
                     </Button>
                   </CardFooter>
                 </Card>
 
-                <Card>
+                <Card className="transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <Badge variant="secondary" className="mb-2 w-fit">Research</Badge>
                     <CardTitle>Impact of Physical Learning Spaces</CardTitle>
@@ -524,7 +586,7 @@ const IEP = () => {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">
+                    <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
                       <Download className="mr-2 h-4 w-4" /> Download Paper
                     </Button>
                   </CardFooter>
@@ -535,7 +597,7 @@ const IEP = () => {
         </div>
       </section>
 
-      {/* Downloads Section */}
+      {/* Downloads Section - Interactive Clickable Buttons */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -547,107 +609,76 @@ const IEP = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Curriculum Downloads */}
-            <Card className="text-center">
-              <CardHeader>
-                <div className="mx-auto bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                  <BookOpen className="h-8 w-8 text-purple-600" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Resource Categories as Interactive Cards */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+              <div className="h-2 bg-[#9b87f5]"></div>
+              <div className="p-6 text-center">
+                <div className="w-16 h-16 mx-auto bg-[#EDE9F7] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#9b87f5] transition-colors duration-300">
+                  <BookOpen className="h-8 w-8 text-[#7E69AB] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <CardTitle>Curriculum Frameworks</CardTitle>
-                <CardDescription>Internationally aligned educational frameworks</CardDescription>
-              </CardHeader>
-              <CardContent className="pb-0">
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li className="pb-2 border-b">K-12 Curriculum Framework</li>
-                  <li className="pb-2 border-b">STEM Education Guidelines</li>
-                  <li className="pb-2 border-b">Arts & Humanities Curriculum</li>
-                  <li>Assessment Standards Guide</li>
-                </ul>
-              </CardContent>
-              <CardFooter className="flex justify-center pt-6">
-                <Button>
-                  <Download className="mr-2 h-4 w-4" /> Download
+                <h3 className="text-xl font-bold mb-3">Curriculum Frameworks</h3>
+                <p className="text-gray-600 mb-6">
+                  Access internationally-aligned educational frameworks for various subjects and grade levels.
+                </p>
+                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                  <Download className="mr-2 h-4 w-4" /> Download Resources
                 </Button>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
 
-            {/* E-books */}
-            <Card className="text-center">
-              <CardHeader>
-                <div className="mx-auto bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                  <FileText className="h-8 w-8 text-blue-600" />
+            <div className="bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+              <div className="h-2 bg-[#6E59A5]"></div>
+              <div className="p-6 text-center">
+                <div className="w-16 h-16 mx-auto bg-[#EDE9F7] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#6E59A5] transition-colors duration-300">
+                  <FileText className="h-8 w-8 text-[#7E69AB] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <CardTitle>E-Books</CardTitle>
-                <CardDescription>Educational guides and references</CardDescription>
-              </CardHeader>
-              <CardContent className="pb-0">
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li className="pb-2 border-b">Modern Teaching Methods</li>
-                  <li className="pb-2 border-b">Digital Classroom Guide</li>
-                  <li className="pb-2 border-b">Global Education Standards</li>
-                  <li>Educational Leadership</li>
-                </ul>
-              </CardContent>
-              <CardFooter className="flex justify-center pt-6">
-                <Button>
-                  <Download className="mr-2 h-4 w-4" /> Download
+                <h3 className="text-xl font-bold mb-3">E-Books</h3>
+                <p className="text-gray-600 mb-6">
+                  Comprehensive guides and references on modern educational methodologies and best practices.
+                </p>
+                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                  <Download className="mr-2 h-4 w-4" /> Download E-Books
                 </Button>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
 
-            {/* Data & Reports */}
-            <Card className="text-center">
-              <CardHeader>
-                <div className="mx-auto bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                  <FileText className="h-8 w-8 text-green-600" />
+            <div className="bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+              <div className="h-2 bg-[#8B5CF6]"></div>
+              <div className="p-6 text-center">
+                <div className="w-16 h-16 mx-auto bg-[#EDE9F7] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#8B5CF6] transition-colors duration-300">
+                  <FileText className="h-8 w-8 text-[#7E69AB] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <CardTitle>Data & Reports</CardTitle>
-                <CardDescription>Research and statistical information</CardDescription>
-              </CardHeader>
-              <CardContent className="pb-0">
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li className="pb-2 border-b">Global Education Trends</li>
-                  <li className="pb-2 border-b">Educational Outcomes Data</li>
-                  <li className="pb-2 border-b">Infrastructure Benchmarks</li>
-                  <li>Technology Integration Analysis</li>
-                </ul>
-              </CardContent>
-              <CardFooter className="flex justify-center pt-6">
-                <Button>
-                  <Download className="mr-2 h-4 w-4" /> Download
+                <h3 className="text-xl font-bold mb-3">Data & Reports</h3>
+                <p className="text-gray-600 mb-6">
+                  Research findings and statistical information on global education trends and outcomes.
+                </p>
+                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                  <Download className="mr-2 h-4 w-4" /> Download Reports
                 </Button>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
 
-            {/* Templates & Tools */}
-            <Card className="text-center">
-              <CardHeader>
-                <div className="mx-auto bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                  <Download className="h-8 w-8 text-orange-600" />
+            <div className="bg-white rounded-xl overflow-hidden shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+              <div className="h-2 bg-[#D6BCFA]"></div>
+              <div className="p-6 text-center">
+                <div className="w-16 h-16 mx-auto bg-[#EDE9F7] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#D6BCFA] transition-colors duration-300">
+                  <Download className="h-8 w-8 text-[#7E69AB] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <CardTitle>Templates & Tools</CardTitle>
-                <CardDescription>Resources for implementation</CardDescription>
-              </CardHeader>
-              <CardContent className="pb-0">
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li className="pb-2 border-b">Assessment Templates</li>
-                  <li className="pb-2 border-b">Curriculum Planning Tools</li>
-                  <li className="pb-2 border-b">Facility Evaluation Forms</li>
-                  <li>Technology Integration Checklist</li>
-                </ul>
-              </CardContent>
-              <CardFooter className="flex justify-center pt-6">
-                <Button>
-                  <Download className="mr-2 h-4 w-4" /> Download
+                <h3 className="text-xl font-bold mb-3">Templates & Tools</h3>
+                <p className="text-gray-600 mb-6">
+                  Practical resources for assessment, curriculum planning, and implementation strategies.
+                </p>
+                <Button className="w-full bg-[#7E69AB] hover:bg-[#7E69AB]/90">
+                  <Download className="mr-2 h-4 w-4" /> Download Templates
                 </Button>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Additional Opportunities Section */}
+      {/* Additional Opportunities with Yellowish Highlights */}
       <section className="py-20 bg-gradient-to-r from-[#7E69AB]/90 to-[#D6BCFA]/70 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -660,70 +691,100 @@ const IEP = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Seasonal Teachers */}
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all">
-              <Users className="h-12 w-12 mb-6 text-white/90" />
-              <h3 className="text-xl font-bold mb-3">Seasonal Teachers</h3>
-              <p className="mb-6 opacity-90">
-                Host international interns as seasonal teachers to bring global 
-                perspectives and fresh methodologies to your institution.
-              </p>
-              <Button variant="secondary">Apply as Host Institution</Button>
+            {/* Seasonal Teachers Card with Yellowish Highlight */}
+            <div className="relative group overflow-hidden rounded-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FEF7CD]/10 to-[#FEF7CD]/30 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all relative z-10">
+                <Users className="h-12 w-12 mb-6 text-white/90" />
+                <h3 className="text-xl font-bold mb-3">Seasonal Teachers</h3>
+                <p className="mb-6 opacity-90">
+                  Host international interns as seasonal teachers to bring global 
+                  perspectives and fresh methodologies to your institution.
+                </p>
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                  Apply as Host Institution
+                </Button>
+              </div>
             </div>
 
-            {/* Hackathon Projects */}
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all">
-              <Lightbulb className="h-12 w-12 mb-6 text-white/90" />
-              <h3 className="text-xl font-bold mb-3">Innovation Projects</h3>
-              <p className="mb-6 opacity-90">
-                Implement transformative projects developed during our educational 
-                hackathons designed to solve real institutional challenges.
-              </p>
-              <Button variant="secondary">Explore Projects</Button>
+            {/* Hackathon Projects Card with Yellowish Highlight */}
+            <div className="relative group overflow-hidden rounded-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FEF7CD]/10 to-[#FEF7CD]/30 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all relative z-10">
+                <Lightbulb className="h-12 w-12 mb-6 text-white/90" />
+                <h3 className="text-xl font-bold mb-3">Innovation Projects</h3>
+                <p className="mb-6 opacity-90">
+                  Implement transformative projects developed during our educational 
+                  hackathons designed to solve real institutional challenges.
+                </p>
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                  Explore Projects
+                </Button>
+              </div>
             </div>
 
-            {/* Grants */}
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all">
-              <Award className="h-12 w-12 mb-6 text-white/90" />
-              <h3 className="text-xl font-bold mb-3">CR Grants Program</h3>
-              <p className="mb-6 opacity-90">
-                Apply for Curriculum Reform grants designed to support institutions 
-                in their journey towards international standards.
-              </p>
-              <Button variant="secondary">Apply for Grants</Button>
+            {/* Grants Card with Yellowish Highlight */}
+            <div className="relative group overflow-hidden rounded-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FEF7CD]/10 to-[#FEF7CD]/30 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all relative z-10">
+                <Award className="h-12 w-12 mb-6 text-white/90" />
+                <h3 className="text-xl font-bold mb-3">CR Grants Program</h3>
+                <p className="mb-6 opacity-90">
+                  Apply for Curriculum Reform grants designed to support institutions 
+                  in their journey towards international standards.
+                </p>
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                  Apply for Grants
+                </Button>
+              </div>
             </div>
 
-            {/* Clubs & Societies */}
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all">
-              <Globe className="h-12 w-12 mb-6 text-white/90" />
-              <h3 className="text-xl font-bold mb-3">Global Clubs & Societies</h3>
-              <p className="mb-6 opacity-90">
-                Establish international clubs and societies in your institution to 
-                foster global citizenship and cross-cultural understanding.
-              </p>
-              <Button variant="secondary">Start a Club</Button>
+            {/* Global Clubs Card with Yellowish Highlight */}
+            <div className="relative group overflow-hidden rounded-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FEF7CD]/10 to-[#FEF7CD]/30 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all relative z-10">
+                <Globe className="h-12 w-12 mb-6 text-white/90" />
+                <h3 className="text-xl font-bold mb-3">Global Clubs & Societies</h3>
+                <p className="mb-6 opacity-90">
+                  Establish international clubs and societies in your institution to 
+                  foster global citizenship and cross-cultural understanding.
+                </p>
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                  Start a Club
+                </Button>
+              </div>
             </div>
 
-            {/* Workshops */}
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all">
-              <GraduationCap className="h-12 w-12 mb-6 text-white/90" />
-              <h3 className="text-xl font-bold mb-3">Faculty Workshops</h3>
-              <p className="mb-6 opacity-90">
-                Participate in specialized workshops designed to equip your faculty 
-                with international teaching methodologies and practices.
-              </p>
-              <Button variant="secondary">Register for Workshops</Button>
+            {/* Faculty Workshops Card with Yellowish Highlight */}
+            <div className="relative group overflow-hidden rounded-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FEF7CD]/10 to-[#FEF7CD]/30 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all relative z-10">
+                <GraduationCap className="h-12 w-12 mb-6 text-white/90" />
+                <h3 className="text-xl font-bold mb-3">Faculty Workshops</h3>
+                <p className="mb-6 opacity-90">
+                  Participate in specialized workshops designed to equip your faculty 
+                  with international teaching methodologies and practices.
+                </p>
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                  Register for Workshops
+                </Button>
+              </div>
             </div>
 
-            {/* Exchange Programs */}
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all">
-              <Building className="h-12 w-12 mb-6 text-white/90" />
-              <h3 className="text-xl font-bold mb-3">Institution Exchange</h3>
-              <p className="mb-6 opacity-90">
-                Join our network of partner institutions for collaborative projects, 
-                student exchanges, and shared educational resources.
-              </p>
-              <Button variant="secondary">Partner With Us</Button>
+            {/* Institution Exchange Card with Yellowish Highlight */}
+            <div className="relative group overflow-hidden rounded-xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FEF7CD]/10 to-[#FEF7CD]/30 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg hover:bg-white/20 transition-all relative z-10">
+                <Building className="h-12 w-12 mb-6 text-white/90" />
+                <h3 className="text-xl font-bold mb-3">Institution Exchange</h3>
+                <p className="mb-6 opacity-90">
+                  Join our network of partner institutions for collaborative projects, 
+                  student exchanges, and shared educational resources.
+                </p>
+                <Button variant="secondary" className="bg-[#FEF7CD] text-[#7E69AB] hover:bg-[#FEF7CD]/90">
+                  Partner With Us
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -744,7 +805,7 @@ const IEP = () => {
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger>What is the International Educational Program (IEP)?</AccordionTrigger>
+                <AccordionTrigger className="hover:text-[#7E69AB]">What is the International Educational Program (IEP)?</AccordionTrigger>
                 <AccordionContent>
                   The International Educational Program (IEP) is a comprehensive framework designed to transform 
                   educational institutions to meet international standards. It encompasses curriculum development, 
@@ -754,7 +815,7 @@ const IEP = () => {
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger>How long does the IEP implementation take?</AccordionTrigger>
+                <AccordionTrigger className="hover:text-[#7E69AB]">How long does the IEP implementation take?</AccordionTrigger>
                 <AccordionContent>
                   The implementation timeline varies based on the institution's current state and specific goals. 
                   Typically, basic implementation can be completed within 12-18 months, while comprehensive 
@@ -764,7 +825,7 @@ const IEP = () => {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger>What support does IEP provide after implementation?</AccordionTrigger>
+                <AccordionTrigger className="hover:text-[#7E69AB]">What support does IEP provide after implementation?</AccordionTrigger>
                 <AccordionContent>
                   IEP offers ongoing support through regular assessments, professional development for faculty, 
                   curriculum updates, technology integration assistance, and access to our global network of 
@@ -774,7 +835,7 @@ const IEP = () => {
               </AccordionItem>
 
               <AccordionItem value="item-4">
-                <AccordionTrigger>Does IEP replace our existing curriculum?</AccordionTrigger>
+                <AccordionTrigger className="hover:text-[#7E69AB]">Does IEP replace our existing curriculum?</AccordionTrigger>
                 <AccordionContent>
                   IEP is designed to enhance rather than replace your existing curriculum. We work with institutions 
                   to integrate international standards while preserving cultural relevance and institutional identity. 
@@ -783,7 +844,7 @@ const IEP = () => {
               </AccordionItem>
 
               <AccordionItem value="item-5">
-                <AccordionTrigger>How can we measure the impact of IEP implementation?</AccordionTrigger>
+                <AccordionTrigger className="hover:text-[#7E69AB]">How can we measure the impact of IEP implementation?</AccordionTrigger>
                 <AccordionContent>
                   IEP includes comprehensive assessment tools to measure impact across multiple dimensions: 
                   student achievement, faculty development, institutional reputation, global engagement, and 
