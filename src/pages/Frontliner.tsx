@@ -75,69 +75,78 @@ const Frontliner = () => {
 
   const featuredOpportunities = [
     {
-      title: "UN Youth Delegate Program",
-      organization: "United Nations",
-      deadline: "March 15, 2026",
-      category: "Leadership",
+      title: "Get Hired via Talent Hunt Alliance",
+      organization: "Uniford Foundation ",
+      deadline: "April 15, 2025",
+      category: "Carrer & Grants",
       location: "Global",
-      url: "#"
+      url: "https://linktr.ee/UNscholar"
     },
     {
-      title: "Google Global Science Fair",
-      organization: "Google",
-      deadline: "April 30, 2026",
+      title: "Internship",
+      organization: "Uniwave",
+      deadline: "April 30, 2025",
       category: "Competitions",
       location: "Global",
-      url: "#"
+      url: "https://www.uniwave.in/getHired"
     },
     {
-      title: "Erasmus+ Youth Exchange",
-      organization: "European Commission",
+      title: "Worldwide Opportunity",
+      organization: "Lawctopus",
       deadline: "Ongoing",
       category: "Exchange Programs",
       location: "Europe",
-      url: "#"
+      url: "https://www.lawctopus.com"
     },
     {
-      title: "TechGirls International Program",
-      organization: "U.S. Department of State",
+      title: "Opportunities",
+      organization: "Opportunity Desk",
       deadline: "January 15, 2026",
       category: "Technology",
       location: "Global",
-      url: "#"
+      url: "https://opportunitydesk.org/"
     },
     {
-      title: "Global Youth Leadership Forum",
-      organization: "World Economic Forum",
+      title: "Hackrathons",
+      organization: "Dev post",
       deadline: "October 10, 2025",
       category: "Leadership",
-      location: "Switzerland",
-      url: "#"
+      location: "Global",
+      url: "https://devpost.com/"
+    },
+    
+    {
+      title: "Opportunities",
+      organization: "youthop",
+      deadline: "April 10, 2025",
+      category: "Leadership",
+      location: "Global",
+      url: "https://www.youthop.com/"
     }
   ];
 
   const platforms = [
     {
-      name: "Youth Opportunity Network",
-      description: "Comprehensive database of scholarships, grants, and competitions",
+      name: "Top 100 Winners – PitchBurg",
+      description: "Meet the boldest startup minds of the year — the Top 100 PitchBurg winners who turned ideas into investment-ready ventures",
       website: "https://example.com/yon",
       focus: "All opportunities"
     },
     {
-      name: "Global Changemakers",
-      description: "Youth-led network supporting social entrepreneurs and activists",
+      name: "Top 100 Innovators – Stanburg Magazine",
+      description: "Celebrating young changemakers and student pioneers featured in Stanburg’s elite Top 100 list of game-changing innovations",
       website: "https://example.com/changemakers",
       focus: "Social impact"
     },
     {
-      name: "AIESEC",
-      description: "International platform for youth leadership development",
+      name: "Top 100 Uni-Pitch Champions",
+      description: "From classrooms to boardrooms — discover the Top 100 Uni-Pitch winners who impressed panels with visionary pitches and powerful prototypes.",
       website: "https://example.com/aiesec",
       focus: "Professional development"
     },
     {
-      name: "Young Sustainable Impact",
-      description: "Global network for youth working on sustainable development goals",
+      name: "Top 100 Projects – Uniford Project Expo",
+      description: "Explore the most impactful tech, social, and green projects by students — the Top 100 that stole the spotlight at the Uniford Project Expo.",
       website: "https://example.com/ysi",
       focus: "Environment & sustainability"
     }
@@ -189,7 +198,7 @@ const Frontliner = () => {
                           </Button>
                         </div>
                         <Button className="mt-4 w-full bg-youth-purple hover:bg-youth-purple/90">
-                          Explore All {category.name}
+                          Coming soon {category.name}
                         </Button>
                       </div>
                     </NavigationMenuContent>
@@ -246,7 +255,7 @@ const Frontliner = () => {
             </div>
             <div className="mt-6 text-center">
               <Button className="bg-youth-purple hover:bg-youth-purple/90">
-                View All Opportunities
+                Loading....
               </Button>
             </div>
           </div>
@@ -267,7 +276,7 @@ const Frontliner = () => {
                     <p className="mb-4 text-gray-600">{platform.description}</p>
                     <Button variant="outline" size="sm" className="w-full" asChild>
                       <a href={platform.website} target="_blank" rel="noopener noreferrer">
-                        Visit Website <ExternalLink className="ml-2 h-4 w-4" />
+                        Publish soon <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </CardContent>

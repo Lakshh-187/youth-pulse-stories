@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-gray-50 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center">
-          <h3 className="text-xl font-bold text-youth-purple mb-4">Youth Pulse</h3>
+          <h3 className="text-xl font-bold text-youth-purple mb-4">YouthBurg</h3>
           <p className="text-gray-600 mb-6 max-w-md">
             The premier platform for stories that matter to young people, covering culture, education, and the issues that shape their future.
           </p>
@@ -30,7 +30,7 @@ const Footer = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 text-gray-600 mb-6">
             <a href="mailto:contact@youthpulse.com" className="flex items-center hover:text-youth-purple transition-colors">
-              <Mail className="h-4 w-4 mr-2" /> contact@youthpulse.com
+              <Mail className="h-4 w-4 mr-2" /> info@youngburg.com
             </a>
             <a href="https://wa.me/1234567890?text=I'm%20interested%20in%20joining%20the%20Youth%20Pulse%20community" className="flex items-center hover:text-youth-purple transition-colors">
               <Phone className="h-4 w-4 mr-2" /> WhatsApp Community
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
           
           <div className="text-center text-gray-500 text-sm">
-            <p className="mb-2">&copy; {new Date().getFullYear()} Youth Pulse Stories. All rights reserved.</p>
+            <p className="mb-2">&copy; {new Date().getFullYear()} Youngburg. All rights reserved.</p>
             <Link to="/legal" className="text-youth-purple hover:underline">Legal Information</Link>
           </div>
         </div>

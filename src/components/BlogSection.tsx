@@ -10,26 +10,26 @@ import { Link } from 'react-router-dom';
 const blogs = [
   {
     id: '1',
-    title: 'The Future of Youth Education in Digital Era',
+    title: 'Innovation Ranking Report of Institutes',
     category: 'Education',
-    author: 'Sarah Johnson',
-    date: 'May 15, 2024',
+    author: 'Vanshika Choudhary',
+    date: 'April 15, 2025',
     image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80'
   },
   {
     id: '2',
-    title: 'How Gen Z is Reshaping Workplace Culture',
+    title: 'Best Curriculum & Innovations in Institutes',
     category: 'Career',
-    author: 'Michael Chen',
+    author: 'Narender Singh',
     date: 'May 10, 2024',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80'
   },
   {
     id: '3',
-    title: 'Youth-Led Climate Initiatives Making a Difference',
+    title: '100+ School Establishments Transformed to International Standards',
     category: 'Environment',
-    author: 'Emma Rodriguez',
-    date: 'May 5, 2024',
+    author: 'LC Kahleer',
+    date: 'April 5, 2025',
     image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80'
   },
   {
@@ -37,7 +37,7 @@ const blogs = [
     title: 'The Rise of Youth Entrepreneurs in Tech',
     category: 'Technology',
     author: 'David Kim',
-    date: 'Apr 28, 2024',
+    date: 'Apr 18, 2025',
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80'
   }
 ];

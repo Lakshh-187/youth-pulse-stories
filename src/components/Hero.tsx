@@ -11,7 +11,7 @@ const Hero = () => {
       <div 
         className="relative bg-cover bg-center h-[70vh] md:h-[80vh]" 
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80')"
+          backgroundImage: "url('https://risingunicorn.com/blog/dailydoseimage3.jpg')"
         }}
       >
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">

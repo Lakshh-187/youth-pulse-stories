@@ -5,7 +5,7 @@ export const storiesData = {
     title: "The Digital Revolution Reshaping Youth Education",
     excerpt: "How technology is creating new opportunities and challenges for the next generation of learners.",
     category: "Education",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1488590528505-98d20b5aba04b?auto=format&fit=crop&q=8",
     author: {
       name: "Alex Rivera",
       avatar: "https://randomuser.me/api/portraits/men/32.jpg"
@@ -139,8 +139,8 @@ export const storiesData = {
   initiatives: [
     {
       id: "global-youth-summit",
-      title: "Global Youth Summit Launches Climate Action Network",
-      excerpt: "International coalition of young leaders creating cross-border solutions to environmental challenges.",
+      title: "100+ Case Studies by Our Backed Agency",
+      excerpt: "Explore over 100 real-world success stories crafted by our expert-backed agency — a goldmine of strategies, ideas, and impact.",
       category: "Initiatives",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80",
       author: {
@@ -152,10 +152,10 @@ export const storiesData = {
     },
     {
       id: "mental-health-platform",
-      title: "Student-Built Mental Health Platform Goes Global",
-      excerpt: "How a university project evolved into a worldwide resource for youth wellness support.",
+      title: "PitchBurg Magazine – Launching Soon",
+      excerpt: "A bold magazine for founders, investors, and dreamers — PitchBurg is where startups meet stories that spark revolutions.",
       category: "Initiatives",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80",
+      image: "https://risingunicorn.com/_next/image?url=%2Frising-unicorns%2FUnitimes1.jpg&w=1080&q=75",
       author: {
         name: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/women/42.jpg"
@@ -165,10 +165,10 @@ export const storiesData = {
     },
     {
       id: "coding-bootcamps-underserved",
-      title: "Free Coding Bootcamps Reach Underserved Communities",
-      excerpt: "Youth-led initiative bringing tech education to areas with limited digital access.",
+      title: "Stanburg Magazine – Launching Soon",
+      excerpt: "Your gateway to innovation, student breakthroughs, and future changemakers — Stanburg is redefining inspiration, one story at a time.",
       category: "Initiatives",
-      image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80",
+      image: "https://risingunicorn.com/_next/image?url=%2Frising-unicorns%2FUnitimes1.jpg&w=1080&q=75",
       author: {
         name: "LC Kahleer",
         avatar: "https://randomuser.me/api/portraits/men/59.jpg"

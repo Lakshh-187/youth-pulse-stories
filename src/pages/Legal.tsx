@@ -13,7 +13,7 @@ const Legal = () => {
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Legal Information</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            This page contains important legal information about Youth Pulse, including our terms and conditions, 
+            This page contains important legal information about Youngburg, including our terms and conditions, 
             privacy policy, and other legal policies that govern your use of our platform.
           </p>
         </div>
@@ -54,7 +54,7 @@ const Legal = () => {
                 </h2>
                 <Separator className="my-4" />
                 <p className="text-gray-600 mb-4">
-                  These Terms and Conditions govern your use of the Youth Pulse platform and constitute a legally binding agreement between you and Youth Pulse Stories.
+                  These Terms and Conditions govern your use of the Youngburg platform and constitute a legally binding agreement between you and Youngburg Stories.
                 </p>
               </div>
 
@@ -64,7 +64,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">1. Acceptance of Terms</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        By accessing or using Youth Pulse, you agree to be bound by these Terms and Conditions, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
+                        By accessing or using Youngburg, you agree to be bound by these Terms and Conditions, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -73,7 +73,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">2. User Registration</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        Some portions of Youth Pulse may require user registration. You agree to provide accurate and complete information when creating an account and to update such information to keep it accurate and current. You are responsible for maintaining the confidentiality of your account password and for all activities that occur under your account.
+                        Some portions of Youngburg may require user registration. You agree to provide accurate and complete information when creating an account and to update such information to keep it accurate and current. You are responsible for maintaining the confidentiality of your account password and for all activities that occur under your account.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -82,7 +82,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">3. Content Guidelines</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        Youth Pulse allows users to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material. You are responsible for the content you post and its compliance with our community guidelines.
+                      Youngburg allows users to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material. You are responsible for the content you post and its compliance with our community guidelines.
                       </p>
                       <p className="mb-4">
                         Prohibited content includes but is not limited to content that is illegal, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another's privacy, or hateful.
@@ -94,7 +94,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">4. Intellectual Property</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        The content on Youth Pulse, including without limitation, the text, graphics, photos, sounds, music, videos, interactive features and the like and the trademarks, service marks and logos contained therein, are owned by or licensed to Youth Pulse, subject to copyright and other intellectual property rights under the law.
+                        The content on Youngburg, including without limitation, the text, graphics, photos, sounds, music, videos, interactive features and the like and the trademarks, service marks and logos contained therein, are owned by or licensed to Youngburg, subject to copyright and other intellectual property rights under the law.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -103,7 +103,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">5. Limitation of Liability</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        Youth Pulse shall not be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.
+                      Youngburg shall not be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -118,7 +118,7 @@ const Legal = () => {
                 </h2>
                 <Separator className="my-4" />
                 <p className="text-gray-600 mb-4">
-                  At Youth Pulse, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform.
+                  At Youngburg, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform.
                 </p>
               </div>
               
@@ -179,38 +179,38 @@ const Legal = () => {
                 </h2>
                 <Separator className="my-4" />
                 <p className="text-gray-600 mb-4">
-                  Learn more about Youth Pulse Stories, our mission, and how to get in touch with us.
+                  Learn more about Youngburg Stories, our mission, and how to get in touch with us.
                 </p>
               </div>
               
               <div className="space-y-6">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-3">About Youth Pulse</h3>
+                  <h3 className="text-xl font-semibold mb-3">About Youngburg</h3>
                   <p className="text-gray-700 mb-4">
-                    Youth Pulse Stories is a premier platform for stories that matter to young people, covering culture, education, and the issues that shape their future. Founded in 2023, we've been dedicated to amplifying the voices of young people and providing them with relevant, engaging content.
+                  Youngburg Stories is a premier platform for stories that matter to young people, covering culture, education, and the issues that shape their future. Founded in 2024, we've been dedicated to amplifying the voices of young people and providing them with relevant, engaging content.
                   </p>
                 </div>
                 
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-3">Legal Entity</h3>
-                  <p className="text-gray-700 mb-2">Youth Pulse Media, Inc.</p>
-                  <p className="text-gray-700 mb-2">Registration Number: YP12345678</p>
-                  <p className="text-gray-700">Incorporated in Delaware, United States</p>
+                  <p className="text-gray-700 mb-2">Unikarll Media, Inc.</p>
+                  <p className="text-gray-700 mb-2">Registration Number: U63122UP2024PTC205491</p>
+                  <p className="text-gray-700">Incorporated in Central, India</p>
                 </div>
                 
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-3">Contact Information</h3>
-                  <p className="text-gray-700 mb-2">Headquarters: 123 Media Lane, San Francisco, CA 94105</p>
-                  <p className="text-gray-700 mb-2">Email: legal@youthpulse.com</p>
-                  <p className="text-gray-700 mb-2">Phone: +1 (555) 123-4567</p>
+                  <p className="text-gray-700 mb-2">CIA , Delhi Road , sre ,Delhi , India</p>
+                  <p className="text-gray-700 mb-2">Email: info@yougburg.com</p>
+                  <p className="text-gray-700 mb-2">Phone: +917347099610</p>
                   <p className="text-gray-700">Business Hours: Monday to Friday, 9:00 AM - 5:00 PM PST</p>
                 </div>
                 
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-3">Leadership Team</h3>
-                  <p className="text-gray-700 mb-2">CEO: Jordan Stevens</p>
-                  <p className="text-gray-700 mb-2">Chief Editorial Officer: Maya Williams</p>
-                  <p className="text-gray-700">Chief Technology Officer: Alex Chen</p>
+                  <p className="text-gray-700 mb-2">CEO: Lakshay Choudhary</p>
+                  <p className="text-gray-700 mb-2">Chief Editorial Officer: Narender Singh</p>
+                  <p className="text-gray-700">Chief Technology Officer: Vanshika Choudhary</p>
                 </div>
               </div>
             </TabsContent>
@@ -222,7 +222,7 @@ const Legal = () => {
                 </h2>
                 <Separator className="my-4" />
                 <p className="text-gray-600 mb-4">
-                  Our refund policy outlines the conditions under which refunds are issued for premium subscriptions and other paid services on Youth Pulse.
+                  Our refund policy outlines the conditions under which refunds are issued for premium subscriptions and other paid services on Youngburg.
                 </p>
               </div>
               
@@ -250,7 +250,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">3. Event Tickets</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        Refunds for event tickets are available up to 72 hours before the scheduled event. After this time, tickets are non-refundable but may be transferred to another person. If an event is canceled or rescheduled by Youth Pulse, you will be entitled to a full refund or the option to attend the rescheduled event.
+                        Refunds for event tickets are available up to 72 hours before the scheduled event. After this time, tickets are non-refundable but may be transferred to another person. If an event is canceled or rescheduled by Youngburg, you will be entitled to a full refund or the option to attend the rescheduled event.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -283,7 +283,7 @@ const Legal = () => {
                 </h2>
                 <Separator className="my-4" />
                 <p className="text-gray-600 mb-4">
-                  Our Data Policy outlines how we collect, use, process, and store data on the Youth Pulse platform.
+                  Our Data Policy outlines how we collect, use, process, and store data on the Youngburg platform.
                 </p>
               </div>
               
@@ -344,7 +344,7 @@ const Legal = () => {
                 </h2>
                 <Separator className="my-4" />
                 <p className="text-gray-600 mb-4">
-                  Our Copyright Policy outlines how we protect intellectual property rights on the Youth Pulse platform and process copyright infringement claims.
+                  Our Copyright Policy outlines how we protect intellectual property rights on the Youngburg platform and process copyright infringement claims.
                 </p>
               </div>
               
@@ -354,7 +354,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">1. Ownership of Content</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        All content published by Youth Pulse, including articles, images, videos, graphics, logos, and design elements, is owned by Youth Pulse or its content partners and is protected by copyright laws. Unauthorized use, reproduction, or distribution of this content is prohibited and may result in legal action.
+                        All content published by Youngburg, including articles, images, videos, graphics, logos, and design elements, is owned by Youngburg or its content partners and is protected by copyright laws. Unauthorized use, reproduction, or distribution of this content is prohibited and may result in legal action.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -363,7 +363,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">2. User-Generated Content</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        When you submit content to Youth Pulse, you retain ownership of your intellectual property rights. However, by submitting content, you grant Youth Pulse a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, adapt, publish, translate, and distribute your content in any existing or future media formats.
+                        When you submit content to Youngburg, you retain ownership of your intellectual property rights. However, by submitting content, you grant Youngburg a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, adapt, publish, translate, and distribute your content in any existing or future media formats.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -372,7 +372,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">3. Fair Use</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        Youth Pulse respects the principles of fair use, which allows limited use of copyrighted material without permission for purposes such as criticism, comment, news reporting, teaching, scholarship, or research. Any content used under fair use principles will be properly attributed to its original source.
+                      Youngburg respects the principles of fair use, which allows limited use of copyrighted material without permission for purposes such as criticism, comment, news reporting, teaching, scholarship, or research. Any content used under fair use principles will be properly attributed to its original source.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
@@ -381,7 +381,7 @@ const Legal = () => {
                     <AccordionTrigger className="text-lg font-medium">4. DMCA Compliance</AccordionTrigger>
                     <AccordionContent>
                       <p className="mb-4">
-                        Youth Pulse complies with the Digital Millennium Copyright Act (DMCA). If you believe that your copyrighted work has been used in a way that constitutes copyright infringement, please submit a DMCA notification to our designated copyright agent at copyright@youthpulse.com.
+                      Youngburg complies with the Digital Millennium Copyright Act (DMCA). If you believe that your copyrighted work has been used in a way that constitutes copyright infringement, please submit a DMCA notification to our designated copyright agent at copyright@youthpulse.com.
                       </p>
                       <p className="mb-4">
                         Your notification must include: identification of the copyrighted work, identification of the allegedly infringing material, your contact information, a statement of good faith belief that the use is not authorized, a statement that the information in the notification is accurate, and your physical or electronic signature.
