@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Frontliner from "./pages/Frontliner";
 import TopOnePercent from "./pages/TopOnePercent";
 import SEP700 from "./pages/SEP700";
+import IEP from "./pages/IEP";
 import NotFound from "./pages/NotFound";
 import ReferralPage from "./pages/ReferralPage";
 import Legal from "./pages/Legal";
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/frontliner" element={<Frontliner />} />
           <Route path="/top-one-percent" element={<TopOnePercent />} />
           <Route path="/sep-700" element={<SEP700 />} />
+          <Route path="/iep" element={<IEP />} />
           <Route path="/blogs" element={<NotFound />} /> {/* Placeholder for future blogs page */}
           <Route path="/blog/:id" element={<NotFound />} /> {/* Placeholder for future blog detail page */}
           <Route path="/referral/:storyId" element={<ReferralPage />} />
