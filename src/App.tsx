@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,7 @@ import IEP from "./pages/IEP";
 import NotFound from "./pages/NotFound";
 import ReferralPage from "./pages/ReferralPage";
 import Legal from "./pages/Legal";
+import Published from "./pages/Published";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +28,7 @@ const App = () => (
           <Route path="/top-one-percent" element={<TopOnePercent />} />
           <Route path="/sep-700" element={<SEP700 />} />
           <Route path="/iep" element={<IEP />} />
+          <Route path="/published" element={<Published />} />
           {/* Placeholder routes for future blog functionality */}
           <Route path="/blogs" element={<NotFound />} /> {/* Blog listing page */}
           <Route path="/blog/:id" element={<NotFound />} /> {/* Blog detail page */}
