@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const PremiumPopup = () => {
@@ -104,7 +104,7 @@ const Hero = () => {
         <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
           Get access to exclusive interviews, in-depth case studies, and cutting-edge research to accelerate your success.
         </p>
-        <Link href="/premium">
+        <Link to="/premium">
           <Button className="bg-blue-600 hover:bg-blue-700 text-white">
             Explore Premium Content
           </Button>
