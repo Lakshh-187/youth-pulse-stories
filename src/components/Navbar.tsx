@@ -27,6 +27,7 @@ const Navbar = () => {
             <Link to="/sep-700" className="font-medium hover:text-youth-purple transition-colors">SEP-700</Link>
             <Link to="/iep" className="font-medium hover:text-youth-purple transition-colors">IEP</Link>
             <Link to="/published" className="font-medium hover:text-youth-purple transition-colors">Published</Link>
+            <Link to="/campaign-leaders" className="font-medium hover:text-youth-purple transition-colors">Campaign Leaders</Link>
           </div>
 
           {/* Desktop Action Buttons */}
@@ -55,6 +56,8 @@ const Navbar = () => {
               <Link to="/sep-700" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>SEP-700</Link>
               <Link to="/iep" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>IEP</Link>
               <Link to="/published" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Published</Link>
+              <Link to="/campaign-leaders" className="px-3 py-2 rounded-md hover:bg-gray-100" onClick={toggleMenu}>Campaign Leaders</Link>
+
               <div className="pt-2 flex items-center">
                 <Button variant="ghost" size="icon" className="mr-2">
                   <Search className="h-5 w-5" />
