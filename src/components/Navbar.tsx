@@ -105,9 +105,9 @@ const Navbar = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link to="/campaign-leaders">
+                  <Link to="/who-stops-you">
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Campaign Leaders
+                      Who Stops You?
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -206,13 +206,6 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               IEP
-            </Link>
-            <Link
-              to="/campaign-leaders"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-              onClick={toggleMenu}
-            >
-              Campaign Leaders
             </Link>
             <Link
               to="/blogs"
