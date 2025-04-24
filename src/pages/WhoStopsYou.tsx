@@ -31,10 +31,14 @@ const WhoStopsYou = () => {
                 A non-profit social welfare campaign connecting students with free opportunities, resources, and support that are otherwise paid.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg" className="bg-white text-youth-purple hover:bg-white/90">
-                  Submit Your Pitch <ArrowRight className="ml-2" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-white text-youth-purple hover:bg-white/90">
+                    Submit Your Pitch <ArrowRight className="ml-2" />
+                  </Button>
+                </a>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" 
+                  onClick={() => window.open("https://forms.gle/iSYUkMPUifoBbgRRA", "_blank", "noopener,noreferrer")}
+                >
                   Learn More
                 </Button>
               </div>
@@ -138,9 +142,11 @@ const WhoStopsYou = () => {
             </div>
 
             <div className="text-center">
-              <Button variant="default" size="lg">
-                Start Your Journey Now <ArrowRight className="ml-2" />
-              </Button>
+              <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                <Button variant="default" size="lg">
+                  Start Your Journey Now <ArrowRight className="ml-2" />
+                </Button>
+              </a>
             </div>
           </div>
         </section>
@@ -306,10 +312,14 @@ const WhoStopsYou = () => {
               Don't let financial barriers stop you from achieving your dreams. Join our community today and access opportunities that were previously out of reach.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-white text-youth-purple hover:bg-white/90">
-                Submit Your Pitch <ArrowRight className="ml-2" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-white text-youth-purple hover:bg-white/90">
+                  Submit Your Pitch <ArrowRight className="ml-2" />
+                </Button>
+              </a>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10"
+                onClick={() => window.open("https://forms.gle/iSYUkMPUifoBbgRRA", "_blank", "noopener,noreferrer")}
+              >
                 Explore Opportunities
               </Button>
             </div>

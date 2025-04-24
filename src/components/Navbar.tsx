@@ -29,9 +29,17 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <span className="text-xl font-bold text-youth-purple">Youngburg</span>
+                <img
+                  src="https://i.ibb.co/8DHFjncx/youngburg-1.jpg"
+                  alt="Youngburg Media Logo"
+                  style={{ width: '40px', height: '40px', marginRight:'10px' }}
+                />
+              
+              
+              <span className="text-xl font-bold text-youth-purple">Youngburg</span>              
               <span className="text-xl font-medium ml-1">Media</span>
             </Link>
+            
           </div>
 
           {/* Desktop Navigation */}

@@ -52,7 +52,9 @@ const ProgramsCategory = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Connects you with industry mentors via Uni-Talks, IEP, CFA, and UIRAD programs.
                     </p>
-                    <Button variant="outline" size="sm" className="w-full">Connect Now</Button>
+                    <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="w-full">Connect Now</Button>
+                    </a>
                   </CardContent>
                 </Card>
 
@@ -68,7 +70,9 @@ const ProgramsCategory = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Get direct internship referrals from partnered organizations.
                     </p>
-                    <Button variant="outline" size="sm" className="w-full">Apply Now</Button>
+                    <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="w-full">Apply Now</Button>
+                    </a>
                   </CardContent>
                 </Card>
 
@@ -84,7 +88,9 @@ const ProgramsCategory = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Get a verified UNSR-backed LOR based on your work.
                     </p>
-                    <Button variant="outline" size="sm" className="w-full">Request LOR</Button>
+                    <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="w-full">Request LOR</Button>
+                    </a>
                   </CardContent>
                 </Card>
 
@@ -100,7 +106,9 @@ const ProgramsCategory = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Gain access to startup grants, social welfare funds, and innovation scholarships.
                     </p>
-                    <Button variant="outline" size="sm" className="w-full">Explore Funding</Button>
+                    <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="w-full">Explore Funding</Button>
+                    </a>
                   </CardContent>
                 </Card>
 
@@ -116,7 +124,9 @@ const ProgramsCategory = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Get your articles, research, or achievements published in top magazines and platforms.
                     </p>
-                    <Button variant="outline" size="sm" className="w-full">Submit Work</Button>
+                    <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="w-full">Submit Work</Button>
+                    </a>
                   </CardContent>
                 </Card>
 
@@ -132,7 +142,9 @@ const ProgramsCategory = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Connect with companies, hiring managers, and referral networks.
                     </p>
-                    <Button variant="outline" size="sm" className="w-full">Join Network</Button>
+                    <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="w-full">Join Network</Button>
+                    </a>
                   </CardContent>
                 </Card>
               </div>
@@ -212,9 +224,11 @@ const ProgramsCategory = () => {
                   </Table>
                 </div>
                 <div className="text-center mt-8">
-                  <Button>
-                    Discover All Opportunities <ExternalLink className="h-4 w-4 ml-2" />
-                  </Button>
+                  <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                    <Button>
+                      Discover All Opportunities <ExternalLink className="h-4 w-4 ml-2" />
+                    </Button>
+                  </a>
                 </div>
               </div>
             </TabsContent>

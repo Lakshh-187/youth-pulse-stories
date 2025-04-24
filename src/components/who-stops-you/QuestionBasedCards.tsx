@@ -166,7 +166,11 @@ const QuestionBasedCards = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">{card.answer}</p>
-                <Button variant="outline" className="w-full">Learn More</Button>
+                <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full">
+                    Learn More
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           ))}
