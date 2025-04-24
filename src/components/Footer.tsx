@@ -19,6 +19,7 @@ const Footer = () => {
             <Link to="/top-one-percent" className="text-gray-600 hover:text-youth-purple transition-colors">Top 1%</Link>
             <Link to="/sep-700" className="text-gray-600 hover:text-youth-purple transition-colors">SEP-700</Link>
             <Link to="/iep" className="text-gray-600 hover:text-youth-purple transition-colors">IEP</Link>
+            <Link to="/campaign-leaders" className="text-gray-600 hover:text-youth-purple transition-colors">Campaign Leaders</Link>
             <Link to="/published" className="text-gray-600 hover:text-youth-purple transition-colors">Published</Link>
           </div>
 
