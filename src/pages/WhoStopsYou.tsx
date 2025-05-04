@@ -45,6 +45,52 @@ const WhoStopsYou = () => {
             </div>
           </div>
         </section>
+        {/* Episode-7, Submit Query and SEP-700 */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <a href="https://www.youtube.com/channel/UCXv-u5c0Kq8u0n_tE65G_oA" target="_blank" rel="noopener noreferrer">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg font-bold">Watch Episode-7</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700">
+                      Catch up on our latest episode featuring inspiring stories and invaluable insights.
+                    </p>
+                  </CardContent>
+                  <Button>Click Here</Button>
+                </Card>
+              </a>
+              <a href="https://forms.gle/iSYUkMPUifoBbgRRA" target="_blank" rel="noopener noreferrer">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg font-bold">Submit Your Query</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700">
+                      Got questions? Need assistance? Submit your queries here and we'll get back to you.
+                    </p>
+                  </CardContent>
+                  <Button>Click Here</Button>
+                </Card>
+              </a>
+              <Link to="/SEP700">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg font-bold">Explore SEP-700</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">Dive into our SEP-700 initiative and discover how it transforms student experiences.</p>
+                </CardContent>
+                <Button>Click Here</Button>
+              </Card>
+              </Link>
+            </div>
+
+          </div>
+
+        </section>
 
         {/* Mission and Vision */}
         <section className="py-16 bg-gray-50">
