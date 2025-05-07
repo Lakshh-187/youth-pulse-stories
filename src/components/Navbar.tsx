@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
-  NavigationMenuContent,
+ NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -88,27 +88,16 @@ const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link
-                          to="/sep-700"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">SEP-700</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Student enrichment program
-                          </p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/iep"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">IEP</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            International exchange program
-                          </p>
-                        </Link>
-                      </li>
+ <Link
+ to="/iep"
+ className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+ >
+ <div className="text-sm font-medium leading-none">IEP</div>
+ <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+ International exchange program
+ </p>
+ </Link>
+ </li>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -117,6 +106,11 @@ const Navbar = () => {
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Who Stops You?
                     </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+ <NavigationMenuItem>
+ <Link to="/sep-700">
+ <NavigationMenuLink className={navigationMenuTriggerStyle()}>SEP-700 <span className="ml-1">💎</span></NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
@@ -169,8 +163,8 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button asChild>
-              <Link to="/who-stops-you">Who Stops You?</Link>
+            <Button asChild><a href="https://wsy.uniwave.in/" target="_blank" rel="noopener noreferrer">
+              Who Stops You?</a>
             </Button>
           </div>
         </div>
