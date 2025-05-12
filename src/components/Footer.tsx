@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,7 +8,7 @@ const Footer = () => {
     <footer className="bg-gray-50 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center">
-          <h3 className="text-xl font-bold text-youth-purple mb-4">YouthBurg</h3>
+          <h3 className="text-xl font-bold text-youth-purple mb-4">YoungBurg</h3>
           <p className="text-gray-600 mb-6 max-w-md">
             The premier platform for stories that matter to young people, covering culture, education, and the issues that shape their future.
           </p>
@@ -20,7 +21,7 @@ const Footer = () => {
             <Link to="/sep-700" className="text-gray-600 hover:text-youth-purple transition-colors">SEP-700</Link>
             <Link to="/iep" className="text-gray-600 hover:text-youth-purple transition-colors">IEP</Link>
             <Link to="/campaign-leaders" className="text-gray-600 hover:text-youth-purple transition-colors">Campaign Leaders</Link>
-            <Link to="/published" className="text-gray-600 hover:text-youth-purple transition-colors">Published</Link>
+            <Link to="/career" className="text-gray-600 hover:text-youth-purple transition-colors">Careers</Link>
           </div>
 
           {/* Social Media Links */}
