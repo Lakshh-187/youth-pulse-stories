@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ChevronDown, ChevronRight, Download, Globe, Trophy, Award, Clock, Users, FileCheck } from 'lucide-react';
+import { ChevronDown, ChevronRight, Download, Globe, Trophy, Award, Clock, Users, FileCheck, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
