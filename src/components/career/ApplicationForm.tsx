@@ -40,7 +40,7 @@ const ApplicationForm = ({ job, onClose }) => {
           })}
         />
         {errors.fullName && (
-          <p className="text-red-500 text-sm">{errors.fullName.message}</p>
+          <p className="text-red-500 text-sm">{errors.fullName.message?.toString()}</p>
         )}
       </div>
 
@@ -59,7 +59,7 @@ const ApplicationForm = ({ job, onClose }) => {
           })}
         />
         {errors.email && (
-          <p className="text-red-500 text-sm">{errors.email.message}</p>
+          <p className="text-red-500 text-sm">{errors.email.message?.toString()}</p>
         )}
       </div>
 
@@ -77,7 +77,7 @@ const ApplicationForm = ({ job, onClose }) => {
           })}
         />
         {errors.portfolio && (
-          <p className="text-red-500 text-sm">{errors.portfolio.message}</p>
+          <p className="text-red-500 text-sm">{errors.portfolio.message?.toString()}</p>
         )}
       </div>
 
@@ -92,7 +92,7 @@ const ApplicationForm = ({ job, onClose }) => {
           })}
         />
         {errors.resume && (
-          <p className="text-red-500 text-sm">{errors.resume.message}</p>
+          <p className="text-red-500 text-sm">{errors.resume.message?.toString()}</p>
         )}
       </div>
 
@@ -107,7 +107,7 @@ const ApplicationForm = ({ job, onClose }) => {
           })}
         />
         {errors.coverLetter && (
-          <p className="text-red-500 text-sm">{errors.coverLetter.message}</p>
+          <p className="text-red-500 text-sm">{errors.coverLetter.message?.toString()}</p>
         )}
       </div>
 
