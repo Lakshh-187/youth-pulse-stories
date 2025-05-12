@@ -58,7 +58,7 @@ const StanburgAward = () => {
       name: 'Aisha Patel',
       country: 'India',
       project: 'Solar Water Purifier',
-      quote: 'Innovation doesn't require massive resources, just massive determination.',
+      quote: 'Innovation doesn\'t require massive resources, just massive determination.',
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80',
       category: '18U18',
       year: 2024,
