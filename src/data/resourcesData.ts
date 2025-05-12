@@ -54,7 +54,7 @@ export const resourcesData: Resource[] = [
     tags: ['Impact', 'Annual'],
     lovedBy: 205,
     thumbnail: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=80',
-    description: 'Detailed report showcasing the impact of Uniford Foundation's initiatives throughout 2024.',
+    description: 'Detailed report showcasing the impact of Uniford Foundation\'s initiatives throughout 2024.',
     downloadUrl: '#',
   },
   {
