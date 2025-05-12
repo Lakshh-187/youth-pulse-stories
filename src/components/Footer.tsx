@@ -22,6 +22,7 @@ const Footer = () => {
             <Link to="/iep" className="text-gray-600 hover:text-youth-purple transition-colors">IEP</Link>
             <Link to="/campaign-leaders" className="text-gray-600 hover:text-youth-purple transition-colors">Campaign Leaders</Link>
             <Link to="/career" className="text-gray-600 hover:text-youth-purple transition-colors">Careers</Link>
+            <Link to="/ylc" className="text-gray-600 hover:text-youth-purple transition-colors">YLC</Link>
           </div>
 
           {/* Social Media Links */}
