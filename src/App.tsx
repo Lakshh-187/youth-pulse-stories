@@ -16,6 +16,7 @@ import CampaignLeaders from "./pages/CampaignLeaders";
 import WhoStopsYou from "./pages/WhoStopsYou";
 import Career from "./pages/Career";
 import YLC from "./pages/YLC";
+import StanburgAward from "./pages/StanburgAward";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/who-stops-you" element={<WhoStopsYou />} />
           <Route path="/career" element={<Career />} />
           <Route path="/ylc" element={<YLC />} />
+          <Route path="/stanburg-award" element={<StanburgAward />} />
           {/* Placeholder routes for future blog functionality */}
           <Route path="/blogs" element={<NotFound />} />
           <Route path="/blog/:id" element={<NotFound />} />
