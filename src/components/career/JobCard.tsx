@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Briefcase, MapPin, Users } from 'lucide-react';
+import { Briefcase, MapPin, Users, Clock } from 'lucide-react';
 
 const JobCard = ({ job, onViewDetails }) => {
   const getStatusColor = (status) => {
@@ -41,6 +41,12 @@ const JobCard = ({ job, onViewDetails }) => {
             <Users className="h-4 w-4 mr-2" />
             <span>{job.experienceLevel} Level</span>
           </div>
+          {job.noticePeriod && (
+            <div className="flex items-center text-gray-600">
+              <Clock className="h-4 w-4 mr-2" />
+              <span>Notice: {job.noticePeriod}</span>
+            </div>
+          )}
         </div>
         
         <div className="mt-4">

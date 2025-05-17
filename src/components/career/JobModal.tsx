@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ApplicationForm from './ApplicationForm';
 import PortfolioGuide from './PortfolioGuide';
-import { Briefcase, MapPin, Users, Calendar, DollarSign } from 'lucide-react';
+import { Briefcase, MapPin, Users, Calendar, DollarSign, Clock } from 'lucide-react';
 
 const JobModal = ({ job, isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState('details');
@@ -48,6 +48,12 @@ const JobModal = ({ job, isOpen, onClose }) => {
               <Calendar className="h-4 w-4 mr-2" />
               <span>{job.type}</span>
             </div>
+            {job.noticePeriod && (
+              <div className="flex items-center text-gray-600">
+                <Clock className="h-4 w-4 mr-2" />
+                <span>Notice Period: {job.noticePeriod}</span>
+              </div>
+            )}
           </DialogDescription>
         </DialogHeader>
         
@@ -77,6 +83,13 @@ const JobModal = ({ job, isOpen, onClose }) => {
                 ))}
               </div>
             </div>
+            
+            {job.selectionProcess && (
+              <div>
+                <h4 className="font-semibold text-lg mb-2">Selection Process</h4>
+                <p className="text-gray-700">{job.selectionProcess}</p>
+              </div>
+            )}
             
             {job.reporting && (
               <div>
