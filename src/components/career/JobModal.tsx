@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ApplicationForm from './ApplicationForm';
 import PortfolioGuide from './PortfolioGuide';
-import { Briefcase, MapPin, Users, Calendar, DollarSign, Clock } from 'lucide-react';
+import { Briefcase, MapPin, Users, Calendar, Clock } from 'lucide-react';
 
 const JobModal = ({ job, isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState('details');
@@ -106,17 +106,6 @@ const JobModal = ({ job, isOpen, onClose }) => {
             )}
             
             <div className="flex flex-col md:flex-row gap-6">
-              <div className="flex-1">
-                <h4 className="font-semibold text-lg mb-2">Salary & Incentives</h4>
-                <div className="flex items-start">
-                  <DollarSign className="h-5 w-5 mr-2 text-green-600 mt-0.5" />
-                  <div>
-                    <p className="text-gray-700">{job.salary}</p>
-                    {job.incentives && <p className="text-gray-600 text-sm mt-1">{job.incentives}</p>}
-                  </div>
-                </div>
-              </div>
-              
               <div className="flex-1">
                 <h4 className="font-semibold text-lg mb-2">Benefits</h4>
                 <ul className="list-disc pl-5 space-y-1">
