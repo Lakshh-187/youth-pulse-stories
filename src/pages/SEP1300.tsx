@@ -26,6 +26,7 @@ import QueryCard from '@/components/sep1300/QueryCard';
 import OpportunityCard from '@/components/sep1300/OpportunityCard';
 import QueryDetailModal from '@/components/sep1300/QueryDetailModal';
 import OpportunityDetailModal from '@/components/sep1300/OpportunityDetailModal';
+import ProgramDetailModal from '@/components/sep1300/ProgramDetailModal';
 import { queriesData, opportunitiesData } from '@/data/sep1300Data';
 
 const SEP1300 = () => {
@@ -33,8 +34,10 @@ const SEP1300 = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedQuery, setSelectedQuery] = useState(null);
   const [selectedOpportunity, setSelectedOpportunity] = useState(null);
+  const [selectedProgram, setSelectedProgram] = useState(null);
   const [isQueryModalOpen, setIsQueryModalOpen] = useState(false);
   const [isOpportunityModalOpen, setIsOpportunityModalOpen] = useState(false);
+  const [isProgramModalOpen, setIsProgramModalOpen] = useState(false);
 
   // Filter queries based on search
   const filteredQueries = queriesData.filter(query => 
@@ -58,6 +61,11 @@ const SEP1300 = () => {
     setIsOpportunityModalOpen(true);
   };
 
+  const handleProgramClick = (program) => {
+    setSelectedProgram(program);
+    setIsProgramModalOpen(true);
+  };
+
   // Featured programs data - for the new grid component
   const featuredPrograms = [
     {
@@ -68,7 +76,7 @@ const SEP1300 = () => {
       rating: 4.5,
       downloads: 582,
       organization: "EduConnect - Classroom Tools",
-      description: "Connect with educational resources and tools for classroom enhancement"
+      description: "Connect with educational resources and tools for classroom enhancement. Our program provides teachers and students with collaborative platforms to enhance learning experiences through technology integration. Participants gain access to a network of educators, customizable teaching materials, and professional development opportunities."
     },
     {
       id: 2,
@@ -78,7 +86,7 @@ const SEP1300 = () => {
       rating: 4.8,
       downloads: 356,
       organization: "MediTrack - Medical Record System",
-      description: "Digital solution for tracking medical records and patient care"
+      description: "Digital solution for tracking medical records and patient care. This non-profit initiative helps healthcare providers implement efficient digital record systems that improve patient outcomes while maintaining data security. Participants learn healthcare data management, patient privacy protocols, and modern medical workflow optimization."
     },
     {
       id: 3,
@@ -88,7 +96,7 @@ const SEP1300 = () => {
       rating: 4.2,
       downloads: 412,
       organization: "GreenSense - IoT Monitoring",
-      description: "Environmental monitoring tools using IoT technology"
+      description: "Environmental monitoring tools using IoT technology to track and analyze ecological data. This program connects environmentalists with technology experts to develop sustainable monitoring solutions. Participants work on real-world conservation projects while learning sensor deployment, data analysis, and environmental impact assessment."
     },
     {
       id: 4,
@@ -98,7 +106,7 @@ const SEP1300 = () => {
       rating: 4.7,
       downloads: 492,
       organization: "FinLit - Financial Literacy",
-      description: "Resources to improve financial literacy and education"
+      description: "Resources to improve financial literacy and education across underserved communities. This initiative provides free workshops, tools, and mentorship to help individuals develop sound financial habits. Participants can learn budgeting strategies, investment principles, and career development in financial services."
     },
     {
       id: 5,
@@ -108,7 +116,7 @@ const SEP1300 = () => {
       rating: 4.3,
       downloads: 275,
       organization: "SmartFarm - AI Powered Farming",
-      description: "AI-driven solutions for agricultural optimization"
+      description: "AI-driven solutions for agricultural optimization that help small farmers maximize yields while minimizing resource usage. This program connects agricultural experts with technology specialists to develop sustainable farming practices. Participants learn crop management systems, resource optimization, and agricultural technology deployment."
     },
     {
       id: 6,
@@ -118,7 +126,7 @@ const SEP1300 = () => {
       rating: 4.6,
       downloads: 328,
       organization: "AccessLearn - Inclusive Education",
-      description: "Inclusive education tools for diverse learning needs"
+      description: "Inclusive education tools for diverse learning needs that help educators create accessible learning environments. This program provides resources and training for teachers working with students with various learning abilities. Participants develop skills in adaptive teaching methods, assistive technology implementation, and inclusive curriculum design."
     },
     {
       id: 7,
@@ -128,7 +136,7 @@ const SEP1300 = () => {
       rating: 4.1,
       downloads: 390,
       organization: "RetailBot AI Agent",
-      description: "Automated retail solutions powered by AI"
+      description: "Automated retail solutions powered by AI to help small businesses compete in the digital marketplace. This program connects retail entrepreneurs with technology experts to implement affordable automation solutions. Participants learn customer service optimization, inventory management, and digital transformation strategy."
     },
     {
       id: 8,
@@ -138,7 +146,7 @@ const SEP1300 = () => {
       rating: 4.9,
       downloads: 457,
       organization: "Pipeline AI",
-      description: "Streamlined data pipeline management for tech solutions"
+      description: "Streamlined data pipeline management for tech solutions that help organizations efficiently process and analyze information. This program provides free tools and training for data management professionals. Participants learn data workflow optimization, ETL processes, and modern database management techniques."
     }
   ];
 
@@ -205,6 +213,7 @@ const SEP1300 = () => {
                     <Button 
                       variant="outline" 
                       className="text-xs h-8 px-3 rounded-md border-gray-300"
+                      onClick={() => handleProgramClick(program)}
                     >
                       Details
                     </Button>
@@ -325,6 +334,15 @@ const SEP1300 = () => {
           opportunity={selectedOpportunity}
           isOpen={isOpportunityModalOpen}
           onClose={() => setIsOpportunityModalOpen(false)}
+        />
+      )}
+      
+      {/* Program Detail Modal */}
+      {selectedProgram && (
+        <ProgramDetailModal 
+          program={selectedProgram}
+          isOpen={isProgramModalOpen}
+          onClose={() => setIsProgramModalOpen(false)}
         />
       )}
       
