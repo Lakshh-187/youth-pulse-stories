@@ -4,9 +4,25 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-const OpportunityCard = ({ opportunity, onClick }) => {
+interface OpportunityCardProps {
+  opportunity: {
+    id: number;
+    title: string;
+    category: string;
+    organization: string;
+    description: string;
+    benefits?: string[];
+    eligibility?: string;
+    deadline?: string;
+    applyLink?: string;
+    learnMoreLink?: string;
+  };
+  onClick: () => void;
+}
+
+const OpportunityCard = ({ opportunity, onClick }: OpportunityCardProps) => {
   // Define badge color based on category
-  const getBadgeStyle = (category) => {
+  const getBadgeStyle = (category: string) => {
     switch (category.toLowerCase()) {
       case 'internship':
         return 'bg-blue-100 text-blue-800 hover:bg-blue-200';

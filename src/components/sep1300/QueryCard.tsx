@@ -4,7 +4,20 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-const QueryCard = ({ query, onClick }) => {
+interface QueryCardProps {
+  query: {
+    id: number;
+    title: string;
+    problem: string;
+    solution: string;
+    tips?: string[];
+    resources?: string[];
+    applyLink?: string;
+  };
+  onClick: () => void;
+}
+
+const QueryCard = ({ query, onClick }: QueryCardProps) => {
   return (
     <Card className="h-full flex flex-col hover:shadow-lg transition-all duration-300 border border-purple-100">
       <CardContent className="pt-6 flex-grow">
