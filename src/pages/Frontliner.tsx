@@ -47,6 +47,7 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import OpportunityCard from '@/components/sep1300/OpportunityCard';
 import OpportunityDetailModal from '@/components/sep1300/OpportunityDetailModal';
+import StoryCard from '@/components/StoryCard';
 
 const Frontliner = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -229,51 +230,166 @@ const Frontliner = () => {
     }
   ];
 
-  // New component 2: Success Stories - similar to programs grid in SEP-1300
+  // Updated Success Stories Data - with more stories for each category
   const successStories = [
+    // Innovation Stories
     {
-      id: 1,
-      title: "From Plastic Waste to Fashion Statement",
-      excerpt: "How a young entrepreneur turned ocean plastic into a sustainable fashion line that's taking the industry by storm.",
-      category: "Eco-friendly",
-      image: "https://via.placeholder.com/300x200?text=Eco+Fashion",
-      author: {
-        name: "Maria Chen",
-        role: "Environmental Entrepreneur"
-      }
-    },
-    {
-      id: 2,
+      id: "1",
       title: "AI That Predicts Crop Diseases",
       excerpt: "A team of agricultural engineers developed an AI system that can detect plant diseases weeks before visible symptoms appear.",
       category: "Innovation",
       image: "https://via.placeholder.com/300x200?text=AI+Agriculture",
       author: {
         name: "Dr. Kwame Nkrumah",
-        role: "Agricultural Technologist"
-      }
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "2 days ago",
+      commentsCount: 42
     },
     {
-      id: 3,
-      title: "Solar Power for Rural Schools",
-      excerpt: "How a non-profit transformed education in remote villages by bringing reliable solar power to disconnected schools.",
-      category: "Non-profit",
-      image: "https://via.placeholder.com/300x200?text=Solar+Schools",
+      id: "2",
+      title: "Quantum Computing Breakthrough",
+      excerpt: "Researchers achieved stable quantum entanglement at room temperature, paving the way for practical quantum computers.",
+      category: "Innovation",
+      image: "https://via.placeholder.com/300x200?text=Quantum+Computing",
       author: {
-        name: "Priya Sharma",
-        role: "Education Advocate"
-      }
+        name: "Elena Mikhailov",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "1 week ago",
+      commentsCount: 37
     },
     {
-      id: 4,
+      id: "3",
+      title: "Neural Interface for Paralysis Patients",
+      excerpt: "A groundbreaking brain-computer interface allows paralyzed individuals to control digital devices with their thoughts.",
+      category: "Innovation",
+      image: "https://via.placeholder.com/300x200?text=Neural+Interface",
+      author: {
+        name: "James Wong",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "3 weeks ago",
+      commentsCount: 29
+    },
+    {
+      id: "4",
+      title: "Fusion Energy Milestone",
+      excerpt: "Scientists achieved net energy gain in fusion reaction, bringing sustainable clean energy one step closer to reality.",
+      category: "Innovation",
+      image: "https://via.placeholder.com/300x200?text=Fusion+Energy",
+      author: {
+        name: "Maria Rodriguez",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "1 month ago",
+      commentsCount: 51
+    },
+    // Eco-friendly Stories
+    {
+      id: "5",
+      title: "From Plastic Waste to Fashion Statement",
+      excerpt: "How a young entrepreneur turned ocean plastic into a sustainable fashion line that's taking the industry by storm.",
+      category: "Eco-friendly",
+      image: "https://via.placeholder.com/300x200?text=Eco+Fashion",
+      author: {
+        name: "Maria Chen",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "3 days ago",
+      commentsCount: 45
+    },
+    {
+      id: "6",
       title: "Clean Water Revolution",
       excerpt: "An innovative filtration system that turns polluted river water into safe drinking water using locally available materials.",
       category: "Eco-friendly",
       image: "https://via.placeholder.com/300x200?text=Water+Filtration",
       author: {
         name: "Carlos Rodriguez",
-        role: "Water Engineer"
-      }
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "5 days ago",
+      commentsCount: 38
+    },
+    {
+      id: "7",
+      title: "Urban Vertical Farms",
+      excerpt: "How vertical farming is transforming abandoned city buildings into lush, productive agricultural spaces.",
+      category: "Eco-friendly",
+      image: "https://via.placeholder.com/300x200?text=Vertical+Farms",
+      author: {
+        name: "Leila Ahmadi",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "1 week ago",
+      commentsCount: 32
+    },
+    {
+      id: "8",
+      title: "Biodegradable Packaging Revolution",
+      excerpt: "A startup has created packaging that dissolves completely in water leaving zero waste and no microplastics.",
+      category: "Eco-friendly",
+      image: "https://via.placeholder.com/300x200?text=Bio+Packaging",
+      author: {
+        name: "Thomas Green",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "2 weeks ago",
+      commentsCount: 27
+    },
+    // Non-profit Stories
+    {
+      id: "9",
+      title: "Solar Power for Rural Schools",
+      excerpt: "How a non-profit transformed education in remote villages by bringing reliable solar power to disconnected schools.",
+      category: "Non-profit",
+      image: "https://via.placeholder.com/300x200?text=Solar+Schools",
+      author: {
+        name: "Priya Sharma",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "1 day ago",
+      commentsCount: 33
+    },
+    {
+      id: "10",
+      title: "Mental Health Access Initiative",
+      excerpt: "A volunteer network of therapists providing free mental health support to underserved communities globally.",
+      category: "Non-profit",
+      image: "https://via.placeholder.com/300x200?text=Mental+Health",
+      author: {
+        name: "David Kim",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "4 days ago",
+      commentsCount: 29
+    },
+    {
+      id: "11",
+      title: "Food Rescue Network",
+      excerpt: "How volunteers are saving tons of perfectly good food from landfills and redirecting it to those in need.",
+      category: "Non-profit",
+      image: "https://via.placeholder.com/300x200?text=Food+Rescue",
+      author: {
+        name: "Sophie Martin",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "1 week ago",
+      commentsCount: 41
+    },
+    {
+      id: "12",
+      title: "Digital Literacy for Seniors",
+      excerpt: "A community program teaching older adults to navigate technology and stay connected in the digital age.",
+      category: "Non-profit",
+      image: "https://via.placeholder.com/300x200?text=Digital+Literacy",
+      author: {
+        name: "Robert Johnson",
+        avatar: "https://via.placeholder.com/40"
+      },
+      publishedAt: "2 weeks ago",
+      commentsCount: 25
     }
   ];
 
@@ -448,9 +564,9 @@ const Frontliner = () => {
           </div>
         </section>
 
-        {/* New Component 2: Success Stories with Tabs (similar to Tabs in SEP-1300) */}
-        <section className="container mx-auto px-4 py-12">
-          <div className="max-w-6xl mx-auto">
+        {/* Updated Better Universe Stories section with smaller, more attractive cards */}
+        <section className="container mx-auto px-4 py-12 bg-gradient-to-r from-white to-purple-50">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <Badge variant="outline" className="bg-youth-purple/10 text-youth-purple mb-2">Success Stories</Badge>
               <h2 className="text-2xl md:text-3xl font-bold mb-3">Better Universe Stories</h2>
@@ -465,128 +581,68 @@ const Frontliner = () => {
               </TabsList>
 
               <TabsContent value="innovations" className="mt-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {successStories.filter(story => story.category === "Innovation").map((story) => (
-                    <Card key={story.id} className="overflow-hidden hover:shadow-md transition-shadow">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={story.image} 
-                          alt={story.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardHeader>
-                        <Badge className="w-fit mb-2 bg-purple-100 text-purple-800 hover:bg-purple-200">
-                          {story.category}
-                        </Badge>
-                        <CardTitle>{story.title}</CardTitle>
-                        <CardDescription>{story.excerpt}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex items-center">
-                          <div className="mr-3">
-                            <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                              {story.author.name.charAt(0)}
-                            </div>
-                          </div>
-                          <div>
-                            <p className="font-medium text-sm">{story.author.name}</p>
-                            <p className="text-xs text-gray-500">{story.author.role}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                      <CardFooter>
-                        <Button variant="outline" className="w-full border-youth-purple text-youth-purple hover:bg-youth-purple/5">
-                          Read Full Story
-                        </Button>
-                      </CardFooter>
-                    </Card>
+                    <StoryCard 
+                      key={story.id}
+                      id={story.id}
+                      title={story.title}
+                      excerpt={story.excerpt}
+                      category={story.category}
+                      image={story.image}
+                      author={story.author}
+                      publishedAt={story.publishedAt}
+                      commentsCount={story.commentsCount}
+                      hasReadMore={true}
+                    />
                   ))}
                 </div>
               </TabsContent>
 
               <TabsContent value="eco-friendly" className="mt-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {successStories.filter(story => story.category === "Eco-friendly").map((story) => (
-                    <Card key={story.id} className="overflow-hidden hover:shadow-md transition-shadow">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={story.image} 
-                          alt={story.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardHeader>
-                        <Badge className="w-fit mb-2 bg-green-100 text-green-800 hover:bg-green-200">
-                          {story.category}
-                        </Badge>
-                        <CardTitle>{story.title}</CardTitle>
-                        <CardDescription>{story.excerpt}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex items-center">
-                          <div className="mr-3">
-                            <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                              {story.author.name.charAt(0)}
-                            </div>
-                          </div>
-                          <div>
-                            <p className="font-medium text-sm">{story.author.name}</p>
-                            <p className="text-xs text-gray-500">{story.author.role}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                      <CardFooter>
-                        <Button variant="outline" className="w-full border-youth-purple text-youth-purple hover:bg-youth-purple/5">
-                          Read Full Story
-                        </Button>
-                      </CardFooter>
-                    </Card>
+                    <StoryCard 
+                      key={story.id}
+                      id={story.id}
+                      title={story.title}
+                      excerpt={story.excerpt}
+                      category={story.category}
+                      image={story.image}
+                      author={story.author}
+                      publishedAt={story.publishedAt}
+                      commentsCount={story.commentsCount}
+                      hasReadMore={true}
+                    />
                   ))}
                 </div>
               </TabsContent>
 
               <TabsContent value="non-profit" className="mt-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {successStories.filter(story => story.category === "Non-profit").map((story) => (
-                    <Card key={story.id} className="overflow-hidden hover:shadow-md transition-shadow">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={story.image} 
-                          alt={story.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardHeader>
-                        <Badge className="w-fit mb-2 bg-indigo-100 text-indigo-800 hover:bg-indigo-200">
-                          {story.category}
-                        </Badge>
-                        <CardTitle>{story.title}</CardTitle>
-                        <CardDescription>{story.excerpt}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex items-center">
-                          <div className="mr-3">
-                            <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                              {story.author.name.charAt(0)}
-                            </div>
-                          </div>
-                          <div>
-                            <p className="font-medium text-sm">{story.author.name}</p>
-                            <p className="text-xs text-gray-500">{story.author.role}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                      <CardFooter>
-                        <Button variant="outline" className="w-full border-youth-purple text-youth-purple hover:bg-youth-purple/5">
-                          Read Full Story
-                        </Button>
-                      </CardFooter>
-                    </Card>
+                    <StoryCard 
+                      key={story.id}
+                      id={story.id}
+                      title={story.title}
+                      excerpt={story.excerpt}
+                      category={story.category}
+                      image={story.image}
+                      author={story.author}
+                      publishedAt={story.publishedAt}
+                      commentsCount={story.commentsCount}
+                      hasReadMore={true}
+                    />
                   ))}
                 </div>
               </TabsContent>
             </Tabs>
+
+            <div className="text-center mt-8">
+              <Button className="bg-youth-purple hover:bg-youth-purple/90">
+                View All Stories <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </section>
 
