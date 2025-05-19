@@ -32,18 +32,24 @@ const OpportunityCard = ({ opportunity, onClick }: OpportunityCardProps) => {
         return 'bg-amber-100 text-amber-800 hover:bg-amber-200';
       case 'competition':
         return 'bg-red-100 text-red-800 hover:bg-red-200';
+      case 'innovation':
+        return 'bg-purple-100 text-purple-800 hover:bg-purple-200';
+      case 'eco-friendly':
+        return 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200';
+      case 'non-profit':
+        return 'bg-indigo-100 text-indigo-800 hover:bg-indigo-200';
       default:
         return 'bg-gray-100 text-gray-800 hover:bg-gray-200';
     }
   };
 
   return (
-    <Card className="h-full flex flex-col hover:shadow-lg transition-all duration-300 border border-blue-100">
+    <Card className="h-full flex flex-col hover:shadow-lg transition-all duration-300 border border-youth-purple/20 bg-gradient-to-br from-white to-purple-50">
       <CardContent className="pt-6 flex-grow">
         <Badge className={`mb-3 ${getBadgeStyle(opportunity.category)}`}>
           {opportunity.category}
         </Badge>
-        <h3 className="text-lg font-bold mb-2 line-clamp-2">{opportunity.title}</h3>
+        <h3 className="text-lg font-bold mb-2 line-clamp-2 text-youth-purple">{opportunity.title}</h3>
         <div className="flex items-center text-sm text-gray-500 mb-2">
           <span className="mr-2">{opportunity.organization}</span>
         </div>
@@ -53,7 +59,7 @@ const OpportunityCard = ({ opportunity, onClick }: OpportunityCardProps) => {
         <Button 
           onClick={onClick} 
           variant="outline"
-          className="w-full border-blue-300 hover:bg-blue-50 hover:text-blue-800"
+          className="w-full border-youth-purple hover:bg-youth-purple/10 hover:text-youth-purple text-youth-purple/80"
         >
           View Details
         </Button>
