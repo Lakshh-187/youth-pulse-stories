@@ -14,7 +14,8 @@ import {
   CardContent, 
   CardDescription, 
   CardHeader, 
-  CardTitle 
+  CardTitle,
+  CardFooter 
 } from '@/components/ui/card';
 import { 
   NavigationMenu,
@@ -398,7 +399,7 @@ const Frontliner = () => {
                       Details
                     </Button>
                     <Button 
-                      className="text-xs h-8 px-3 rounded-md bg-youth-purple hover:bg-youth-purple/90 text-white"
+                      className="text-xs h-8 px-3 rounded-md bg-youth-purple hover:bg-youth-purple/90"
                     >
                       Support
                     </Button>
