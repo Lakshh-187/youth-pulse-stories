@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -138,14 +139,14 @@ const BetterUniverseSection = () => {
                 <div key={index} className="flex gap-4 items-start border-b border-gray-100 pb-4">
                   <div className="bg-gray-100 rounded-lg h-16 w-16 flex-shrink-0 overflow-hidden">
                     <img 
-                      src={story.imageUrl || "https://via.placeholder.com/150"} 
+                      src={story.image || "https://via.placeholder.com/150"} 
                       alt={story.title} 
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div>
                     <h4 className="font-semibold text-sm">{story.title}</h4>
-                    <p className="text-xs text-gray-500 mt-1">{story.summary?.substring(0, 60)}...</p>
+                    <p className="text-xs text-gray-500 mt-1">{story.excerpt?.substring(0, 60)}...</p>
                   </div>
                 </div>
               ))}
