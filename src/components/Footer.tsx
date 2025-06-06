@@ -14,18 +14,23 @@ const Footer = () => {
           </p>
           
           {/* Navigation Links */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8 w-full max-w-2xl">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8 w-full max-w-4xl">
             <Link to="/" className="text-gray-600 hover:text-youth-purple transition-colors">Home</Link>
+            <Link to="/store" className="text-gray-600 hover:text-youth-purple transition-colors">Store</Link>
+            <Link to="/store/digital" className="text-gray-600 hover:text-youth-purple transition-colors">Digital Store</Link>
+            <Link to="/store/cart" className="text-gray-600 hover:text-youth-purple transition-colors">Cart</Link>
             <Link to="/frontliner" className="text-gray-600 hover:text-youth-purple transition-colors">Frontliner</Link>
             <Link to="/top-one-percent" className="text-gray-600 hover:text-youth-purple transition-colors">Top 1%</Link>
             <Link to="/sep-700" className="text-gray-600 hover:text-youth-purple transition-colors">SEP-700</Link>
+            <Link to="/sep-1300" className="text-gray-600 hover:text-youth-purple transition-colors">SEP-1300</Link>
             <Link to="/iep" className="text-gray-600 hover:text-youth-purple transition-colors">IEP</Link>
             <Link to="/campaign-leaders" className="text-gray-600 hover:text-youth-purple transition-colors">Campaign Leaders</Link>
+            <Link to="/who-stops-you" className="text-gray-600 hover:text-youth-purple transition-colors">Who Stops You</Link>
             <Link to="/career" className="text-gray-600 hover:text-youth-purple transition-colors">Careers</Link>
             <Link to="/ylc" className="text-gray-600 hover:text-youth-purple transition-colors">YLC</Link>
             <Link to="/stanburg-award" className="text-gray-600 hover:text-youth-purple transition-colors">Stanburg Award</Link>
-            <Link to="/who-stops-you" className="text-gray-600 hover:text-youth-purple transition-colors">Who Stops You</Link>
             <Link to="/execution-plan" className="text-gray-600 hover:text-youth-purple transition-colors">Execution Plan</Link>
+            <Link to="/legal" className="text-gray-600 hover:text-youth-purple transition-colors">Legal</Link>
           </div>
 
           {/* Social Media Links */}
