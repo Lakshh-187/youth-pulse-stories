@@ -20,6 +20,8 @@ import StanburgAward from "./pages/StanburgAward";
 import ExecutionPlan from "./pages/ExecutionPlan";
 import Store from "./pages/Store";
 import DigitalStore from "./pages/DigitalStore";
+import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,8 @@ const App = () => (
           {/* Store routes */}
           <Route path="/store" element={<Store />} />
           <Route path="/store/digital" element={<DigitalStore />} />
+          <Route path="/store/product/:id" element={<ProductDetail />} />
+          <Route path="/store/cart" element={<Cart />} />
           {/* Program-related routes */}
           <Route path="/frontliner" element={<Frontliner />} />
           <Route path="/top-one-percent" element={<TopOnePercent />} />

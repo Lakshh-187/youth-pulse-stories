@@ -57,14 +57,16 @@ const StoreNavbar = () => {
               <Heart className="h-5 w-5" />
             </Button>
             
-            <Button variant="ghost" size="sm" className="relative">
-              <ShoppingCart className="h-5 w-5" />
-              {cartCount > 0 && (
-                <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
-                  {cartCount}
-                </Badge>
-              )}
-            </Button>
+            <Link to="/store/cart">
+              <Button variant="ghost" size="sm" className="relative">
+                <ShoppingCart className="h-5 w-5" />
+                {cartCount > 0 && (
+                  <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
+                    {cartCount}
+                  </Badge>
+                )}
+              </Button>
+            </Link>
             
             <Button variant="ghost" size="sm">
               <User className="h-5 w-5" />

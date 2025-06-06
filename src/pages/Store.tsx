@@ -178,9 +178,11 @@ const Store = () => {
                     <ShoppingCart className="h-4 w-4 mr-1" />
                     Add to Cart
                   </Button>
-                  <Button variant="outline" size="sm">
-                    View
-                  </Button>
+                  <Link to={`/store/product/${product.id}`}>
+                    <Button variant="outline" size="sm">
+                      View
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             ))}
