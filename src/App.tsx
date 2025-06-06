@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,6 +18,8 @@ import Career from "./pages/Career";
 import YLC from "./pages/YLC";
 import StanburgAward from "./pages/StanburgAward";
 import ExecutionPlan from "./pages/ExecutionPlan";
+import Store from "./pages/Store";
+import DigitalStore from "./pages/DigitalStore";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          {/* Store routes */}
+          <Route path="/store" element={<Store />} />
+          <Route path="/store/digital" element={<DigitalStore />} />
           {/* Program-related routes */}
           <Route path="/frontliner" element={<Frontliner />} />
           <Route path="/top-one-percent" element={<TopOnePercent />} />
