@@ -1,7 +1,6 @@
 
 import React from 'react';
 import StanburgHero from '@/components/stanburg/StanburgHero';
-import WhoWeEmpower from '@/components/stanburg/WhoWeEmpower';
 import WhatWeProvide from '@/components/stanburg/WhatWeProvide';
 import DemoVideoSection from '@/components/stanburg/DemoVideoSection';
 import PreviousProjects from '@/components/stanburg/PreviousProjects';
@@ -15,7 +14,6 @@ const StanburgAward = () => {
   return (
     <div className="min-h-screen bg-white">
       <StanburgHero />
-      <WhoWeEmpower />
       <WhatWeProvide />
       <DemoVideoSection />
       <PreviousProjects />
