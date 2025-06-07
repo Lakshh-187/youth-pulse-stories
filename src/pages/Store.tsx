@@ -7,6 +7,8 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import StoreNavbar from '@/components/store/StoreNavbar';
+import DigitalStoreSection from '@/components/store/DigitalStoreSection';
+import SuggestedProducts from '@/components/store/SuggestedProducts';
 import Footer from '@/components/Footer';
 
 const Store = () => {
@@ -79,22 +81,28 @@ const Store = () => {
       <section className="relative bg-gradient-to-r from-youth-purple to-youth-blue text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-6">Your Premium Store</h1>
+            <h1 className="text-5xl font-bold mb-6">Your All-in-One Store</h1>
             <p className="text-xl mb-8 opacity-90">
               Discover amazing products, digital content, and exclusive memberships. 
-              Everything you need in one place.
+              From physical products to instant downloads - everything you need in one place.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-white text-youth-purple hover:bg-gray-100">
-                Shop Now
+                Shop Physical Products
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                <Link to="/store/digital">Explore Digital Store</Link>
+                <Link to="/store/digital">Browse Digital Store</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Suggested Products Section */}
+      <SuggestedProducts />
+
+      {/* Digital Store Section */}
+      <DigitalStoreSection />
 
       {/* Search and Filter Section */}
       <section className="py-8 bg-white shadow-sm">
